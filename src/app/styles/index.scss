@@ -1,7 +1,7 @@
 @import "reset";
-@import "variables/global";
-@import "themes/light";
-@import "themes/dark";
+@import "./variables/global";
+@import "./themes/light";
+@import "./themes/dark";
 
 * {
     margin: 0;
@@ -16,4 +16,14 @@
     color: var(--primary-color);
 
     min-height: 100dvh;
+}
+
+.content-page {
+    display: flex;
+}
+
+.page-wrapper {
+    flex-grow: 1;
+
+    padding: 20px;
 }
