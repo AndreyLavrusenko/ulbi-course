@@ -22,7 +22,11 @@
         },
         {
           "emptyLineBefore": "threshold",
-          "properties": ["display", "justify-content", "align-content", "align-items", "flex", "grid"]
+          "properties": ["box-sizing"]
+        },
+        {
+          "emptyLineBefore": "threshold",
+          "properties": ["display", "justify-content", "align-content", "align-items", "flex", "grid", "flex-grow"]
         },
         {
           "emptyLineBefore": "threshold",
@@ -30,11 +34,24 @@
         },
         {
           "emptyLineBefore": "threshold",
-          "properties": ["gap", "padding", "margin"]
+          "properties": ["gap", "padding", "padding-top", "padding-bottom", "padding-left", "padding-right",
+            "margin", "margin-top", "margin-bottom", "margin-left", "margin-right"]
         },
         {
           "emptyLineBefore": "threshold",
-          "properties": ["background", "background-color", "border", "border-radius", "color", "box-shadow"]
+          "properties": ["background", "background-color", "border", "border-radius", "box-shadow"]
+        },
+        {
+          "emptyLineBefore": "threshold",
+          "properties": ["font", "font-family", "font-size", "font-weight", "line-height", "color"]
+        },
+        {
+          "emptyLineBefore": "threshold",
+          "properties": ["transform", "transition"]
+        },
+        {
+          "emptyLineBefore": "threshold",
+          "properties": ["cursor", "text-decoration", "outline"]
         }
       ],
       {

@@ -4,19 +4,19 @@
 @import "./themes/dark";
 
 * {
+	box-sizing: border-box;
+
 	padding: 0;
 	margin: 0;
-
-	box-sizing: border-box;
 }
 
 .app {
 	min-height: 100vh;
 
 	background: var(--bg-color);
-	color: var(--primary-color);
 
 	font: var(--font-m);
+	color: var(--primary-color);
 }
 
 .content-page {
@@ -28,9 +28,9 @@
 }
 
 .page-wrapper {
-	padding: 20px;
-
 	flex-grow: 1;
+
+	padding: 20px;
 }
 
 a {
@@ -40,6 +40,7 @@ a {
 	height: 1px;
 
 	border: 0;
+
 	color: blue;
 
 	transform: none;
