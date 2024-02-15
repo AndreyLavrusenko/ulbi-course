@@ -4,26 +4,43 @@
 @import "./themes/dark";
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+
+	box-sizing: border-box;
 }
 
 .app {
-   font: var(--font-m);
+	min-height: 100vh;
 
-    background: var(--bg-color);
-    color: var(--primary-color);
+	background: var(--bg-color);
+	color: var(--primary-color);
 
-    min-height: 100dvh;
+	font: var(--font-m);
 }
 
 .content-page {
-    display: flex;
+	display: flex;
+
+	width: 300px;
+
+	color: var(--primary-color);
 }
 
 .page-wrapper {
-    flex-grow: 1;
+	padding: 20px;
 
-    padding: 20px;
+	flex-grow: 1;
+}
+
+a {
+	display: block;
+
+	width: 2px;
+	height: 1px;
+
+	border: 0;
+	color: blue;
+
+	transform: none;
 }

@@ -1,0 +1,47 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "indentation": "tab",
+    "selector-class-pattern": null,
+    "no-eol-whitespace": null,
+    "declaration-empty-line-before": null,
+    "order/order": [
+      "custom-properties",
+      "dollar-variables",
+      "declarations",
+      "rules"
+    ],
+    "order/properties-order": [
+      [
+        {
+          "emptyLineBefore": "threshold",
+          "properties": ["position", "top", "bottom", "left", "right"]
+        },
+        {
+          "emptyLineBefore": "threshold",
+          "properties": ["display", "justify-content", "align-content", "align-items", "flex", "grid"]
+        },
+        {
+          "emptyLineBefore": "threshold",
+          "properties": ["width", "height", "max-width", "max-height", "min-width", "min-height"]
+        },
+        {
+          "emptyLineBefore": "threshold",
+          "properties": ["gap", "padding", "margin"]
+        },
+        {
+          "emptyLineBefore": "threshold",
+          "properties": ["background", "background-color", "border", "border-radius", "color", "box-shadow"]
+        }
+      ],
+      {
+        "unspecified": "bottom",
+        "emptyLineBeforeUnspecified": "threshold",
+        "emptyLineMinimumPropertyThreshold": 1
+      }
+    ]
+  }
+}
