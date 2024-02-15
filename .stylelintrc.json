@@ -1,0 +1,64 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "indentation": "tab",
+    "selector-class-pattern": null,
+    "no-eol-whitespace": null,
+    "declaration-empty-line-before": null,
+    "order/order": [
+      "custom-properties",
+      "dollar-variables",
+      "declarations",
+      "rules"
+    ],
+    "order/properties-order": [
+      [
+        {
+          "emptyLineBefore": "threshold",
+          "properties": ["position", "top", "bottom", "left", "right"]
+        },
+        {
+          "emptyLineBefore": "threshold",
+          "properties": ["box-sizing"]
+        },
+        {
+          "emptyLineBefore": "threshold",
+          "properties": ["display", "justify-content", "align-content", "align-items", "flex", "grid", "flex-grow"]
+        },
+        {
+          "emptyLineBefore": "threshold",
+          "properties": ["width", "height", "max-width", "max-height", "min-width", "min-height"]
+        },
+        {
+          "emptyLineBefore": "threshold",
+          "properties": ["gap", "padding", "padding-top", "padding-bottom", "padding-left", "padding-right",
+            "margin", "margin-top", "margin-bottom", "margin-left", "margin-right"]
+        },
+        {
+          "emptyLineBefore": "threshold",
+          "properties": ["background", "background-color", "border", "border-radius", "box-shadow"]
+        },
+        {
+          "emptyLineBefore": "threshold",
+          "properties": ["font", "font-family", "font-size", "font-weight", "line-height", "color"]
+        },
+        {
+          "emptyLineBefore": "threshold",
+          "properties": ["transform", "transition"]
+        },
+        {
+          "emptyLineBefore": "threshold",
+          "properties": ["cursor", "text-decoration", "outline"]
+        }
+      ],
+      {
+        "unspecified": "bottom",
+        "emptyLineBeforeUnspecified": "threshold",
+        "emptyLineMinimumPropertyThreshold": 1
+      }
+    ]
+  }
+}
