@@ -1,3 +1,3 @@
-import {LangSwitcher} from "widget/LangSwitcher/ui/LangSwitcher";
+import { LangSwitcher } from 'widget/LangSwitcher/ui/LangSwitcher';
 
-export {LangSwitcher}
+export { LangSwitcher };
