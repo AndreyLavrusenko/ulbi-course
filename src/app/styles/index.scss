@@ -22,8 +22,6 @@
 .content-page {
 	display: flex;
 
-	width: 300px;
-
 	color: var(--primary-color);
 }
 
@@ -31,17 +29,4 @@
 	flex-grow: 1;
 
 	padding: 20px;
-}
-
-a {
-	display: block;
-
-	width: 2px;
-	height: 1px;
-
-	border: 0;
-
-	color: blue;
-
-	transform: none;
 }
