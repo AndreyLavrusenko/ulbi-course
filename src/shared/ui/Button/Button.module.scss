@@ -1,4 +1,6 @@
 .Button {
+	font: var(--font-s);
+
 	cursor: pointer;
 }
 
@@ -9,5 +11,29 @@
 	background: none;
 	border: none;
 
+	color: var(--secondary-color);
+
 	outline: none;
+}
+
+.primary {
+	padding: 6px 12px;
+	margin: 0;
+
+	background-color: var(--secondary-color);
+	border: none;
+	border-radius: 8px;
+
+	color: var(--accent-color);
+}
+
+.secondary {
+	padding: 6px 12px;
+	margin: 0;
+
+	background-color: var(--secondary-color-opacity);
+	border: none;
+	border-radius: 8px;
+
+	color: var(--white);
 }

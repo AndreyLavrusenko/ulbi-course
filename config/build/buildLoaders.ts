@@ -1,21 +1,19 @@
-import webpack from 'webpack';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { BuildOptions } from './types/config';
+import webpack from "webpack";
+import { BuildOptions } from "./types/config";
+import { buildCssLoaders } from "./loaders/buildCssLoaders";
+import { buildSvgLoaders } from "./loaders/buildSvgLoaders";
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 
     const { isDev } = options;
 
-    const svgLoader = {
-        test: /\.svg$/,
-        use: ['@svgr/webpack'],
-    };
+    const svgLoader = buildSvgLoaders();
 
     const fileLoader = {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
             {
-                loader: 'file-loader',
+                loader: "file-loader",
             },
         ],
     };
@@ -24,9 +22,9 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         test: /\.(js|jsx|tsx)$/,
         exclude: /node_modules/,
         use: {
-            loader: 'babel-loader',
+            loader: "babel-loader",
             options: {
-                presets: ['@babel/preset-env'],
+                presets: ["@babel/preset-env"],
             },
         },
     };
@@ -36,9 +34,9 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         exclude: /node_modules/,
         use: [
             {
-                loader: require.resolve('babel-loader'),
+                loader: require.resolve("babel-loader"),
                 options: {
-                    plugins: [isDev && require.resolve('react-refresh/babel')].filter(Boolean),
+                    plugins: [isDev && require.resolve("react-refresh/babel")].filter(Boolean),
                 },
             },
         ],
@@ -47,31 +45,11 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     // Если не используем ts - нужен babel
     const typescriptLoader = {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        use: "ts-loader",
         exclude: /node_modules/,
     };
 
-    const cssLoaders = {
-        test: /\.s[ac]ss$/i,
-        use: [
-            // Creates `style` nodes from JS strings
-            isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-            // Translates CSS into CommonJS
-            {
-                loader: 'css-loader',
-                options: {
-                    modules: {
-                        auto: (resPath: string) => Boolean(resPath.includes('.module.')),
-                        localIdentName: isDev
-                            ? '[path][name]__[local]-[hash:base64:5]'
-                            : '[hash:base64:8]',
-                    },
-                },
-            },
-            // Compiles Sass to CSS
-            'sass-loader',
-        ],
-    };
+    const cssLoaders = buildCssLoaders(isDev);
 
     return [
         babelLoader,
