@@ -1,6 +1,6 @@
 import { classNames } from "shared/lib/classNames/classNames";
 
-import { Button } from "shared/ui/Button/Button";
+import { Button, ThemeButton } from "shared/ui/Button/Button";
 import cls from "./PageError.module.scss";
 
 interface PageErrorProps {
@@ -16,7 +16,7 @@ export const PageError = ({ className }: PageErrorProps) => {
     return (
         <div className={classNames(cls.PageError, {}, [className])}>
             <p>Произошла ошибка</p>
-            <Button onClick={reloadPage}>
+            <Button theme={ThemeButton.PRIMARY} onClick={reloadPage}>
                 Обновить страницу
             </Button>
         </div>

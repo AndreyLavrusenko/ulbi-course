@@ -4,7 +4,7 @@
 	width: var(--sidebar-width);
 	height: calc(100vh - var(--navbar-height));
 
-	background: var(--inverted-bg-color);
+	background: var(--bg-color-secondary);
 
 	transition: width 0.3s;
 }
