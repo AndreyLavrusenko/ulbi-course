@@ -47,7 +47,7 @@
         },
         {
           "emptyLineBefore": "threshold",
-          "properties": ["transform", "transition"]
+          "properties": ["transform", "transition", "opacity"]
         },
         {
           "emptyLineBefore": "threshold",
