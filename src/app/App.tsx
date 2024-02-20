@@ -7,7 +7,6 @@ import { Sidebar } from "widget/Sidebar";
 
 import { Suspense } from "react";
 
-import "./styles/index.scss";
 
 export const App = () => {
 

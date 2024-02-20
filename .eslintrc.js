@@ -16,6 +16,7 @@ module.exports = {
     plugins: [
         "react",
         "@typescript-eslint",
+        "react-hooks",
     ],
     rules: {
         "react/jsx-indent": [2, 4],
@@ -24,6 +25,8 @@ module.exports = {
         "react/jsx-filename-extension": [2, { extensions: [".js", ".jsx", ".tsx"] }],
         "import/no-unresolved": "off",
         "import/prefer-default-export": "off",
+        "jsx-a11y/no-static-element-interactions": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
         "no-unused-vars": "off",
         "no-tabs": "off",
         "no-console": "off",
@@ -41,6 +44,9 @@ module.exports = {
         "no-underscore-dangle": "off",
         "react/button-has-type": "off",
         "padded-blocks": "off",
+        // Показывает что нужно обернуть в useCallback
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "error",
     },
     globals: {
         __IS_DEV__: true,
