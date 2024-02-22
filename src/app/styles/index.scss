@@ -10,7 +10,8 @@
 	margin: 0;
 }
 
-body {
+.app,
+.app-modal {
 	font: var(--font-m);
 	color: var(--primary-color);
 }

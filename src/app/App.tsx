@@ -9,7 +9,6 @@ import { Suspense } from "react";
 
 
 export const App = () => {
-
     const { theme } = useTheme();
 
     return (
