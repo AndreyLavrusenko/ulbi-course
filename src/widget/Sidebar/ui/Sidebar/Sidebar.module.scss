@@ -6,11 +6,7 @@
 
 	background: var(--bg-color-secondary);
 
-	transition: width 0.3s;
-}
-
-.collapsed {
-	width: var(--sidebar-width-collapsed);
+	transition: width 0.5s;
 }
 
 .switchers {
@@ -23,4 +19,53 @@
 	width: 100%;
 
 	gap: 20px;
+}
+
+.collapseBtn {
+	position: absolute;
+	bottom: 32px;
+	right: -32px;
+}
+
+.navItems {
+	display: flex;
+	flex-direction: column;
+
+	gap: 12px 0;
+
+	margin-top: 20px;
+	margin-left: 25px;
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+}
+
+.navLink {
+	display: block;
+
+	margin-left: 8px;
+
+	transition: opacity 0.2s;
+	opacity: 1;
+}
+
+.icon {
+	stroke: var(--primary-color);
+}
+
+.collapsed {
+	width: var(--sidebar-width-collapsed);
+
+	.switchers {
+		flex-direction: column;
+	}
+
+	.navLink {
+		width: 0;
+		height: 0;
+
+		opacity: 0;
+	}
 }
