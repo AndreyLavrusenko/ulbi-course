@@ -8,10 +8,17 @@
 	border-radius: 5px;
 
 	font: var(--font-m);
+	color: var(--primary-color);
 
 	transition: border-color 0.3s ease; /* Плавное изменение цвета границы */
 
 	outline: none; /* Убираем обводку при фокусе */
+}
+
+.Input::placeholder {
+	color: var(--primary-color);
+
+	opacity: 0.7;
 }
 
 /* Стили для hover состояния */
