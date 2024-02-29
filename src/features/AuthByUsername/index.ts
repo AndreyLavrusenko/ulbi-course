@@ -1,1 +1,7 @@
-export { LoginModal } from "./ui/LoginModal/LoginModal";
+import { LoginSchema } from "features/AuthByUsername/model/types/loginSchema";
+import { LoginModal } from "./ui/LoginModal/LoginModal";
+
+export {
+    LoginSchema,
+    LoginModal,
+};

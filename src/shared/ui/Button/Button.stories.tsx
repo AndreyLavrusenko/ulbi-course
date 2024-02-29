@@ -40,6 +40,15 @@ export const PrimaryDark: Story = {
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 
+export const PrimaryDisabled: Story = {
+    args: {
+        children: "TEXT",
+        theme: ButtonTheme.PRIMARY,
+        disabled: true,
+    },
+};
+
+
 export const Secondary: Story = {
     args: {
         children: "TEXT",

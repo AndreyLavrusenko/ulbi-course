@@ -20,13 +20,6 @@ export const InputStory: Story = {
 };
 
 
-export const InputStoryPlaceholder: Story = {
-    name: "Placeholder",
-    args: {
-        placeholder: "Value в Input",
-    },
-};
-
 export const InputStoryDark: Story = {
     name: "Dark theme",
     args: {
@@ -34,12 +27,18 @@ export const InputStoryDark: Story = {
     },
 };
 
-
 InputStoryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 
-export const InputStoryPlaceholderDark: Story = {
+export const InputStoryPlaceholder: Story = {
     name: "Placeholder",
+    args: {
+        placeholder: "Value в Input",
+    },
+};
+
+export const InputStoryPlaceholderDark: Story = {
+    name: "Placeholder Dark",
     args: {
         placeholder: "Value в Input",
     },
