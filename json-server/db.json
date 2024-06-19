@@ -8,7 +8,14 @@
 	{ "id": "2", "text": "another comment about post 1", "postId": "1" }
   ],
   "profile": {
-	"name": "typicode"
+	"first": "Andrew",
+	"lastname": "Lavrusenko",
+	"age": 22,
+	"currency": "RUB",
+	"country": "Russia",
+	"city": "Saint-Petersburg",
+	"username": "admin",
+	"avatar": "https://s3.timeweb.com/2b38a555-c1e9e5e2-6b9c-4b49-856a-259653d758ba/UnionShop/img/169425176296028202.png"
   },
   "users": [
 	{

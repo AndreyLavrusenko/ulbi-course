@@ -1,14 +1,12 @@
 import { classNames } from "shared/lib/classNames/classNames";
-import { useState } from "react";
+import { memo, useState } from "react";
 import { ThemeSwitcher } from "widget/ThemeSwitcher";
 import { LangSwitcher } from "widget/LangSwitcher";
 
 import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
-import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
-import { RouterPath } from "shared/config/routeConfig/routeConfig";
 
-import AboutIcon from "shared/assets/icons/about.svg";
-import MainIcon from "shared/assets/icons/home.svg";
+import { SidebarItemsList } from "widget/Sidebar/model/items";
+import { SidebarItem } from "widget/Sidebar/ui/SidebarItem/SidebarItem";
 
 import cls from "./Sidebar.module.scss";
 
@@ -16,14 +14,14 @@ interface SidebarProps {
     className?: string;
 }
 
-export const Sidebar = ({ className }: SidebarProps) => {
+export const Sidebar = memo(({ className }: SidebarProps) => {
 
     const [collapsed, setCollapsed] = useState(false);
 
     const onToggle = () => {
 
         setCollapsed((prev) => !prev);
-    
+
     };
 
     return (
@@ -40,26 +38,9 @@ export const Sidebar = ({ className }: SidebarProps) => {
             </Button>
 
             <div className={cls.navItems}>
-                <AppLink
-                    className={cls.nav}
-                    theme={AppLinkTheme.PRIMARY}
-                    to={RouterPath.main}
-                >
-                    <MainIcon className={cls.icon} />
-                    <span className={cls.navLink}>
-                        Главная страница
-                    </span>
-                </AppLink>
-
-                <AppLink
-                    className={cls.nav}
-                    to={RouterPath.about}
-                >
-                    <AboutIcon className={cls.icon} />
-                    <span className={cls.navLink}>
-                        О сайте
-                    </span>
-                </AppLink>
+                {SidebarItemsList.map((item) => (
+                    <SidebarItem key={item.path} collapsed={collapsed} item={item} />
+                ))}
             </div>
 
 
@@ -70,4 +51,4 @@ export const Sidebar = ({ className }: SidebarProps) => {
         </div>
     );
 
-};
+});
