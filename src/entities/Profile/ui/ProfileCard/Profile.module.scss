@@ -1,15 +1,9 @@
 .ProfileCard {
-	padding: 20px;
-
-	border: 2px solid var(--primary-color);
+	width: 100%;
 }
 
-.header {
-	display: flex;
-}
-
-.header button {
-	margin-left: auto;
+.editing {
+	
 }
 
 .data {
@@ -18,4 +12,18 @@
 
 .input {
 	margin-top: 10px;
+}
+
+.loading {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 300px;
+}
+
+.error {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

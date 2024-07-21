@@ -15,7 +15,6 @@ interface SidebarProps {
 }
 
 export const Sidebar = memo(({ className }: SidebarProps) => {
-
     const [collapsed, setCollapsed] = useState(false);
 
     const onToggle = () => {
@@ -39,7 +38,11 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
 
             <div className={cls.navItems}>
                 {SidebarItemsList.map((item) => (
-                    <SidebarItem key={item.path} collapsed={collapsed} item={item} />
+                    <SidebarItem
+                        key={item.path}
+                        collapsed={collapsed}
+                        item={item}
+                    />
                 ))}
             </div>
 

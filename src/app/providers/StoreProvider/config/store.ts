@@ -1,5 +1,4 @@
 import { configureStore, ReducersMapObject } from "@reduxjs/toolkit";
-import { counterReducer } from "entities/Couter";
 import { userReducer } from "entities/User";
 import { To } from "history";
 import { NavigateOptions } from "react-router";
@@ -16,7 +15,6 @@ export function createReduxStore(
 ) {
     const rootReducers: ReducersMapObject = {
         ...asyncReducer,
-        counter: counterReducer,
         user: userReducer,
     };
 

@@ -1,27 +1,43 @@
 {
   "posts": [
-	{ "id": "1", "title": "a title", "views": 100 },
-	{ "id": "2", "title": "another title", "views": 200 }
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    }
   ],
   "comments": [
-	{ "id": "1", "text": "a comment about post 1", "postId": "1" },
-	{ "id": "2", "text": "another comment about post 1", "postId": "1" }
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
   ],
   "profile": {
-	"first": "Andrew",
-	"lastname": "Lavrusenko",
-	"age": 22,
-	"currency": "RUB",
-	"country": "Russia",
-	"city": "Saint-Petersburg",
-	"username": "admin",
-	"avatar": "https://s3.timeweb.com/2b38a555-c1e9e5e2-6b9c-4b49-856a-259653d758ba/UnionShop/img/169425176296028202.png"
+    "first": "Andrew228",
+    "lastname": "Lavrusenko",
+    "age": 228,
+    "currency": "EUR",
+    "country": "Kazakhstan",
+    "city": "Saint-Petersburg",
+    "username": "admin",
+    "avatar": "https://s3.timeweb.com/2b38a555-c1e9e5e2-6b9c-4b49-856a-259653d758ba/UnionShop/img/169425176296028202.png"
   },
   "users": [
-	{
-	  "id": 1,
-	  "username": "admin",
-	  "password": "123"
-	}
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123"
+    }
   ]
 }
