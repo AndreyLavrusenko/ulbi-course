@@ -1,0 +1,26 @@
+.icon {
+	stroke: var(--primary-color);
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+}
+
+.navLink {
+	display: block;
+
+	margin-left: 8px;
+
+	transition: opacity 0.2s;
+	opacity: 1;
+}
+
+.collapsed {
+	.navLink {
+		width: 0;
+		height: 0;
+
+		opacity: 0;
+	}
+}
