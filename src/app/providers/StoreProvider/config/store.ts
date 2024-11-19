@@ -4,6 +4,7 @@ import { To } from "history";
 import { NavigateOptions } from "react-router";
 import { $api } from "shared/api/api";
 import { CombinedState, Reducer } from "redux";
+import { articleDetailsReducer } from "entities/Article";
 import { StateSchema, ThunkExtraArg } from "./StateSchema";
 import { createReducerManager } from "./reducerManager";
 
@@ -16,6 +17,7 @@ export function createReduxStore(
     const rootReducers: ReducersMapObject = {
         ...asyncReducer,
         user: userReducer,
+        articleDetails: articleDetailsReducer,
     };
 
     const reducerManager = createReducerManager(rootReducers);

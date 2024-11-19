@@ -4,6 +4,11 @@
 	font: var(--font-s);
 
 	cursor: pointer;
+	transition: .2s;
+}
+
+.Button:hover {
+	opacity: 0.7;
 }
 
 .Button:disabled {
