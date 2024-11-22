@@ -1,6 +1,7 @@
 export interface User {
 	id: number,
-	username: string
+	username: string,
+	avatar?: string,
 }
 
 export interface UserSchema {

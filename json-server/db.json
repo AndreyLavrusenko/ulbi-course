@@ -46,13 +46,15 @@
 	  "id": 1,
 	  "username": "admin",
 	  "password": "123",
-	  "role": "admin"
+	  "role": "admin",
+	  "avatar": "https://s3.timeweb.com/2b38a555-c1e9e5e2-6b9c-4b49-856a-259653d758ba/UnionShop/img/169425176296028202.png"
 	},
 	{
 	  "id": "2",
 	  "username": "user",
 	  "password": "123",
-	  "role": "USER"
+	  "role": "USER",
+	  "avatar": "https://s3.timeweb.com/2b38a555-c1e9e5e2-6b9c-4b49-856a-259653d758ba/UnionShop/img/169425176296028202.png"
 	}
   ],
   "articles": [

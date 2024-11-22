@@ -15,7 +15,7 @@ type Story = StoryObj<typeof Code>;
 export const CodeStory: Story = {
     name: "Default",
     args: {
-        children: "const meta: Meta<typeof Code> = {\n"
+        text: "const meta: Meta<typeof Code> = {\n"
             + "    title: \"shared/Code\",\n"
             + "    component: Code,\n"
             + "};\n"
