@@ -9,6 +9,8 @@ import { To } from "history";
 import { NavigateOptions } from "react-router";
 import { ArticleDetailsSchema } from "entities/Article";
 import { ArticleDetailsCommentSchema } from "pages/ArticleDetailsPage";
+import { AddCommentFormSchema } from "features/AddCommentForm";
+import { ArticlePageSchema } from "pages/ArticlesPage";
 
 export interface StateSchema {
 	user: UserSchema,
@@ -18,6 +20,8 @@ export interface StateSchema {
 	// async
 	loginForm?: LoginSchema,
 	articleDetailsComments?: ArticleDetailsCommentSchema,
+	addCommentForm?: AddCommentFormSchema,
+	articlePage?: ArticlePageSchema,
 }
 
 export type StateSchemaKey = keyof StateSchema

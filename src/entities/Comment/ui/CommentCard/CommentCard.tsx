@@ -3,6 +3,8 @@ import { Comment } from "entities/Comment";
 import { Avatar } from "shared/ui/Avatar/Avatar";
 import { Text } from "shared/ui/Text/Text";
 import { Skeleton } from "shared/ui/Skeleton/Skeleton";
+import { AppLink } from "shared/ui/AppLink/AppLink";
+import { RouterPath } from "shared/config/routeConfig/routeConfig";
 import cls from "./CommentCard.module.scss";
 
 
@@ -30,10 +32,10 @@ export const CommentCard = (props: CommentCardProps) => {
 
     return (
         <div className={classNames(cls.CommentCard, {}, [className])}>
-            <div className={cls.Header}>
+            <AppLink to={`${RouterPath.profile}${comment.user.id}`} className={cls.Header}>
                 {comment.user.avatar && <Avatar src={comment.user.avatar} size={30} />}
                 <Text className={cls.Username} title={comment.user.username} />
-            </div>
+            </AppLink>
             <Text className={cls.Text} text={comment.text} />
         </div>
     );

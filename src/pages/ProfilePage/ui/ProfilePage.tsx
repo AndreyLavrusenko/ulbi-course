@@ -18,6 +18,7 @@ import ProfilePageHeader from "pages/ProfilePage/ui/ProfilePageHeader/ProfilePag
 import { Currency } from "entities/Currency/model/types/currency";
 import { Country } from "entities/Country";
 import { Text, TextTheme } from "shared/ui/Text/Text";
+import { useParams } from "react-router-dom";
 import cls from "./ProfilePage.module.scss";
 
 const reducers: ReducerList = {
@@ -37,6 +38,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
     const validateErrors = useSelector(getProfileValidateError);
+    const { id } = useParams<{id: string}>();
 
     const validateErrorTranslates = {
         [ValidateProfileError.SERVER_ERROR]: "Ошибка сервера",
@@ -47,8 +49,10 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     };
 
     useEffect(() => {
-        dispatch(fetchProfileData());
-    }, [dispatch]);
+        if (!id) return;
+
+        dispatch(fetchProfileData(id));
+    }, [dispatch, id]);
 
     const onChangeFirstName = useCallback((value: string) => {
         dispatch(profileActions.updateProfile({ first: value || "" }));
@@ -85,7 +89,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     }, [dispatch]);
 
     return (
-        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+        <DynamicModuleLoader reducers={reducers}>
             <div className={classNames(cls.ProfilePage, {}, [className])}>
                 <ProfilePageHeader />
                 {validateErrors && validateErrors.length > 0 && validateErrors.map((err) => (

@@ -52,7 +52,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
 
 
     return (
-        <DynamicModuleLoader reducers={initialReducers}>
+        <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount={false}>
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text title="Форма авторизации" />
                 <Input autoFocus value={username} onChange={onChangeUsername} placeholder="Логин" />

@@ -46,6 +46,7 @@ module.exports = {
         "no-underscore-dangle": "off",
         "react/button-has-type": "off",
         "padded-blocks": "off",
+        "react/no-array-index-key": "off",
         // Показывает что нужно обернуть в useCallback
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "error",
