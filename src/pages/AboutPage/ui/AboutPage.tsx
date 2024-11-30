@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
-import { Page } from "shared/ui/Page/Page";
+import { Page } from "widget/Page/Page";
 
 const AboutPage: FC = () => {
 

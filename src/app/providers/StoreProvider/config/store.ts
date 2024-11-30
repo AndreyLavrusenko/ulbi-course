@@ -5,6 +5,8 @@ import { NavigateOptions } from "react-router";
 import { $api } from "shared/api/api";
 import { CombinedState, Reducer } from "redux";
 import { articleDetailsReducer } from "entities/Article";
+import { scrollRestorationReducer } from "features/ScrollRestoration";
+import { profileReducer } from "entities/Profile";
 import { StateSchema, ThunkExtraArg } from "./StateSchema";
 import { createReducerManager } from "./reducerManager";
 
@@ -12,12 +14,13 @@ import { createReducerManager } from "./reducerManager";
 export function createReduxStore(
     initialState?: StateSchema,
     asyncReducer?: ReducersMapObject<StateSchema>,
-    navigate?: (to: To, options?: NavigateOptions) => void,
 ) {
-    const rootReducers: ReducersMapObject = {
+    const rootReducers: ReducersMapObject<StateSchema> = {
         ...asyncReducer,
         user: userReducer,
         articleDetails: articleDetailsReducer,
+        scrollRestore: scrollRestorationReducer,
+        profile: profileReducer,
     };
 
     const reducerManager = createReducerManager(rootReducers);

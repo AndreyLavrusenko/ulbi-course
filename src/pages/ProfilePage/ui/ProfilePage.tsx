@@ -19,7 +19,7 @@ import { Currency } from "entities/Currency/model/types/currency";
 import { Country } from "entities/Country";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 import { useParams } from "react-router-dom";
-import { Page } from "shared/ui/Page/Page";
+import { Page } from "widget/Page/Page";
 import cls from "./ProfilePage.module.scss";
 
 const reducers: ReducerList = {

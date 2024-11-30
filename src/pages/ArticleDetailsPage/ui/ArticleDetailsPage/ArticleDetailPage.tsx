@@ -14,7 +14,7 @@ import {
 import { AddCommentForm } from "features/AddCommentForm";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { RouterPath } from "shared/config/routeConfig/routeConfig";
-import { Page } from "shared/ui/Page/Page";
+import { Page } from "widget/Page/Page";
 import { getArticleCommentsLoading } from "../../model/selectors/comments";
 import cls from "./ArticleDetailPage.module.scss";
 import { articleDetailsCommentsReducer, getArticleComments } from "../../model/slice/articleDetailsCommentsSlice";

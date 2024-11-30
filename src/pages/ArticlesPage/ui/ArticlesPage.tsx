@@ -12,7 +12,7 @@ import {
     getArticlePageView,
 } from "pages/ArticlesPage/model/selectors/articlesPageSelectors";
 import { ArticleViewSelector } from "features/ArticleViewSelector";
-import { Page } from "shared/ui/Page/Page";
+import { Page } from "widget/Page/Page";
 import { fetchNextArticlePage } from "pages/ArticlesPage/model/services/fetchNextArticlePage/fetchNextArticlePage";
 import { Text } from "shared/ui/Text/Text";
 import { initArticlesPage } from "pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage";
