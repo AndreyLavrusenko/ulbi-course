@@ -14,6 +14,7 @@ import {
 import { AddCommentForm } from "features/AddCommentForm";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { RouterPath } from "shared/config/routeConfig/routeConfig";
+import { Page } from "shared/ui/Page/Page";
 import { getArticleCommentsLoading } from "../../model/selectors/comments";
 import cls from "./ArticleDetailPage.module.scss";
 import { articleDetailsCommentsReducer, getArticleComments } from "../../model/slice/articleDetailsCommentsSlice";
@@ -60,13 +61,13 @@ const ArticleDetailPage = ({ className }: ArticleDetailPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducerList}>
-            <div className={classNames(cls.ArticleDetailPage, {}, [className])}>
+            <Page className={classNames(cls.ArticleDetailPage, {}, [className])}>
                 <Button onClick={onBackToList} theme={ButtonTheme.CLEAR}>Назад к списку</Button>
                 <ArticleDetails id={id} />
                 <Text title="Комментарии" className={cls.CommentTitle} />
                 <AddCommentForm onSendComment={onSendComment} />
                 <CommentList comments={comments} isLoading={commentsIsLoading} />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

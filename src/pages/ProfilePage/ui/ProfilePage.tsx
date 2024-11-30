@@ -19,6 +19,7 @@ import { Currency } from "entities/Currency/model/types/currency";
 import { Country } from "entities/Country";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 import { useParams } from "react-router-dom";
+import { Page } from "shared/ui/Page/Page";
 import cls from "./ProfilePage.module.scss";
 
 const reducers: ReducerList = {
@@ -90,7 +91,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.ProfilePage, {}, [className])}>
+            <Page className={classNames(cls.ProfilePage, {}, [className])}>
                 <ProfilePageHeader />
                 {validateErrors && validateErrors.length > 0 && validateErrors.map((err) => (
                     <Text theme={TextTheme.ERROR} text={validateErrorTranslates[err]} />
@@ -109,7 +110,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
                     onChangeCurrency={onChangeCurrency}
                     onChangeCountry={onChangeCountry}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

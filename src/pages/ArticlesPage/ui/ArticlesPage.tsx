@@ -13,6 +13,9 @@ import {
     getArticlePageView,
 } from "pages/ArticlesPage/model/selectors/articlesPageSelectors";
 import { ArticleViewSelector } from "features/ArticleViewSelector";
+import { Page } from "shared/ui/Page/Page";
+import { fetchNextArticlePage } from "pages/ArticlesPage/model/services/fetchNextArticlePage/fetchNextArticlePage";
+import { Text } from "shared/ui/Text/Text";
 import cls from "./ArticlesPage.module.scss";
 
 
@@ -31,18 +34,29 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     const error = useSelector(getArticlePageError);
     const view = useSelector(getArticlePageView);
 
+
     useEffect(() => {
-        dispatch(fetchArticleList());
         dispatch(articlePageActions.initialState());
+        dispatch(fetchArticleList({
+            page: 1,
+        }));
     }, [dispatch]);
 
     const onChangeView = useCallback((view: ArticleView) => {
         dispatch(articlePageActions.setView(view));
     }, [dispatch]);
 
+    const onLoadNextPart = useCallback(() => {
+        dispatch(fetchNextArticlePage());
+    }, [dispatch]);
+
+    if (error) {
+        return <Text title="Произошла ошибка" />;
+    }
+
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.ArticlesPage, {}, [className])}>
+            <Page onScrollEnd={onLoadNextPart} className={classNames(cls.ArticlesPage, {}, [className])}>
                 <ArticleViewSelector
                     view={view}
                     onViewClick={onChangeView}
@@ -52,7 +66,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
                     view={view}
                     articles={articles}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

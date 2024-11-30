@@ -23,14 +23,6 @@ export const ArticleList = ({
     className, articles, isLoading, view = ArticleView.SMALL,
 }: ArticleListProps) => {
 
-    if (isLoading) {
-        return (
-            <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-                {getSkeletons(view)}
-            </div>
-        );
-    }
-
     const renderArticle = (article: Article) => (
         <ArticleListItem article={article} view={view} className={cls.card} key={article.id} />
     );
@@ -40,6 +32,7 @@ export const ArticleList = ({
             {articles.length > 0
                 ? articles.map(renderArticle)
                 : null}
+            {isLoading && getSkeletons(view)}
         </div>
     );
 };
