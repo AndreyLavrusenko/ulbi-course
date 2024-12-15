@@ -4,6 +4,7 @@ import {
     ArticleDetailsRecommendationsSchema,
 } from "pages/ArticleDetailsPage/model/types/ArticleDetailsRecommendationsSchema";
 import { ArticleDetailsPageSchema } from "pages/ArticleDetailsPage/model/types";
+import { getCanUserEditArticle } from "pages/ArticleDetailsPage/model/selectors/article";
 
 
 export {
@@ -11,4 +12,5 @@ export {
     ArticleDetailsCommentSchema,
     ArticleDetailsRecommendationsSchema,
     ArticleDetailsPageSchema,
+    getCanUserEditArticle,
 };
