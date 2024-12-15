@@ -5,10 +5,10 @@ import {
 } from "@reduxjs/toolkit";
 import { ProfileSchema } from "entities/Profile";
 import { AxiosInstance } from "axios";
-import { To } from "history";
-import { NavigateOptions } from "react-router";
 import { ArticleDetailsSchema } from "entities/Article";
-import { ArticleDetailsCommentSchema } from "pages/ArticleDetailsPage";
+import {
+    ArticleDetailsPageSchema,
+} from "pages/ArticleDetailsPage";
 import { AddCommentFormSchema } from "features/AddCommentForm";
 import { ArticlePageSchema } from "pages/ArticlesPage";
 import { ScrollRestorationSchema } from "features/ScrollRestoration";
@@ -21,9 +21,9 @@ export interface StateSchema {
 
 	// async
 	loginForm?: LoginSchema,
-	articleDetailsComments?: ArticleDetailsCommentSchema,
 	addCommentForm?: AddCommentFormSchema,
 	articlePage?: ArticlePageSchema,
+	articleDetailsPage?: ArticleDetailsPageSchema,
 }
 
 export type StateSchemaKey = keyof StateSchema

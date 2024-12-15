@@ -83,6 +83,13 @@
 		margin-left: auto;
 	}
 
+	.viewsParent {
+		display: flex;
+		align-items: center;
+
+		gap: 4px;
+	}
+
 	.views {
 		padding-right: 8px;
 	}
@@ -104,6 +111,13 @@
 		max-height: 140px;
 
 		overflow-y: hidden;
+	}
+
+	.footerWrapper {
+		width: 100%;
+
+		display: flex;
+		justify-content: space-between;
 	}
 
 	.footer {

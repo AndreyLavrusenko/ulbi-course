@@ -3,6 +3,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { Article, ArticleView } from "entities/Article";
 import { ArticleListItemSkeleton } from "entities/Article/ui/ArticleListItem/ArticleListItemSkeleton";
 import { Text } from "shared/ui/Text/Text";
+import { HTMLAttributeAnchorTarget } from "react";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import cls from "./ArticleList.module.scss";
 
@@ -12,6 +13,7 @@ interface ArticleListProps {
     articles: Article[];
     isLoading?: boolean;
     view?: ArticleView;
+    target?: HTMLAttributeAnchorTarget
 }
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
@@ -21,11 +23,11 @@ const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL
     ));
 
 export const ArticleList = ({
-    className, articles, isLoading, view = ArticleView.SMALL,
+    className, articles, isLoading, view = ArticleView.SMALL, target,
 }: ArticleListProps) => {
 
     const renderArticle = (article: Article) => (
-        <ArticleListItem article={article} view={view} className={cls.card} key={article.id} />
+        <ArticleListItem target={target} article={article} view={view} className={cls.card} key={article.id} />
     );
 
     if (!isLoading && !articles.length) {

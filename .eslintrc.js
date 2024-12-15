@@ -33,7 +33,7 @@ module.exports = {
         "no-tabs": "off",
         "no-console": "off",
         quotes: ["error", "double"],
-        "max-len": ["error", { code: 120 }],
+        "max-len": ["error", { code: 140 }],
         "no-multiple-empty-lines": ["error", { max: 2 }],
         "no-trailing-spaces": "off",
         "react/require-default-props": "off",
