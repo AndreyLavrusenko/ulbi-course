@@ -10,4 +10,14 @@
 	gap: 30px;
 
 	flex-wrap: wrap;
+
+	.card {
+		display: inline-flex;
+	}
+
+	.row {
+		display: flex;
+
+		gap: 30px;
+	}
 }

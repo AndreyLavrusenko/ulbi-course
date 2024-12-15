@@ -10,6 +10,7 @@ import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { StateSchema } from "app/providers/StoreProvider";
 import { useThrottle } from "shared/lib/hooks/useThrottle/useThrottle";
+import { PAGE_ID } from "pages/ArticlesPage/ui/ArticlePage/ArticlesPage";
 import cls from "./Page.module.scss";
 
 
@@ -50,6 +51,7 @@ export const Page = ({ className, children, onScrollEnd }: PageProps) => {
             ref={wrapperRef}
             onScroll={onScroll}
             className={classNames(cls.Page, {}, [className])}
+            id={PAGE_ID}
         >
             {children}
             {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}

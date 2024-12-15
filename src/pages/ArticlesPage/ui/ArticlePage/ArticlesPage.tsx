@@ -28,6 +28,8 @@ const reducers: ReducerList = {
     articlePage: articlePageReducer,
 };
 
+export const PAGE_ID = "PAGE_ID";
+
 const ArticlesPage = ({ className }: ArticlesPageProps) => {
     const dispatch = useAppDispatch();
     const articles = useSelector(getArticleAdapter.selectAll);
