@@ -9,6 +9,7 @@ import { SidebarItem } from "widget/Sidebar/ui/SidebarItem/SidebarItem";
 
 import { useSelector } from "react-redux";
 import { getSidebarItems } from "widget/Sidebar/model/selector/getSidebarItems";
+import { VStack } from "shared/ui/Stack/VStack/VStack";
 import cls from "./Sidebar.module.scss";
 
 interface SidebarProps {
@@ -27,7 +28,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
     };
 
     return (
-        <menu data-testid="sidebar" className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
+        <aside data-testid="sidebar" className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
             <Button
                 theme={ButtonTheme.BACKGROUND}
                 data-testid="sidebar-toggle"
@@ -39,7 +40,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
                 {collapsed ? ">" : "<"}
             </Button>
 
-            <div className={cls.navItems}>
+            <VStack role="navigation" className={cls.navItems} gap="8">
                 {sidebarItemList.map((item) => (
                     <SidebarItem
                         key={item.path}
@@ -47,14 +48,14 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
                         item={item}
                     />
                 ))}
-            </div>
+            </VStack>
 
 
             <div className={cls.switchers}>
                 <ThemeSwitcher />
                 <LangSwitcher short />
             </div>
-        </menu>
+        </aside>
     );
 
 });

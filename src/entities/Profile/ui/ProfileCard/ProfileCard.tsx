@@ -7,6 +7,7 @@ import { Avatar } from "shared/ui/Avatar/Avatar";
 import { Currency } from "entities/Currency/model/types/currency";
 import { CurrencySelect } from "entities/Currency";
 import { Country, CountrySelect } from "entities/Country";
+import { HStack, VStack } from "shared/ui/Stack";
 import style from "./Profile.module.scss";
 
 
@@ -56,21 +57,21 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (error) {
         return (
-            <div className={classNames(style.ProfileCard, {}, [style.error])}>
+            <HStack max justify="center" align="center">
                 <Text
                     theme={TextTheme.ERROR}
                     title="Произошла ошибка при загрузке"
                     text={error}
                     align={TextAlign.CENTER}
                 />
-            </div>
+            </HStack>
         );
     }
 
     return (
-        <div className={classNames(style.ProfileCard, mods, [])}>
+        <VStack gap="8" max className={classNames(style.ProfileCard, mods, [])}>
 
-            <div className={style.data}>
+            <div>
                 {data?.avatar && <Avatar src={data?.avatar} size={180} />}
                 <Input
                     value={data?.first}
@@ -127,6 +128,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     readOnly={readonly}
                 />
             </div>
-        </div>
+        </VStack>
     );
 };

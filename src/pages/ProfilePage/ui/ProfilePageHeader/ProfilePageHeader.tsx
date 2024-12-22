@@ -7,6 +7,7 @@ import {
 } from "entities/Profile";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { getUserAuthData } from "entities/User";
+import { HStack } from "shared/ui/Stack/HStack/HStack";
 import style from "./ProfilePageHeader.module.scss";
 
 const ProfilePageHeader = () => {
@@ -31,10 +32,10 @@ const ProfilePageHeader = () => {
     }, [dispatch]);
 
     return (
-        <div className={style.header}>
+        <HStack className={style.header} justify="between" max>
             <Text title="Профиль" />
             {canEdit && (
-                <div className={style.HeaderButton}>
+                <HStack gap="8" className={style.HeaderButton}>
                     {
                         readonly
                             ? <Button theme={ButtonTheme.SECONDARY} onClick={onEdit}>Редактировать</Button>
@@ -45,9 +46,9 @@ const ProfilePageHeader = () => {
                                 </>
                             )
                     }
-                </div>
+                </HStack>
             )}
-        </div>
+        </HStack>
     );
 };
 
