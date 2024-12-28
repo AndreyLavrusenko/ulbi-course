@@ -9,6 +9,8 @@ import { getUserAuthData, userActions } from "entities/User";
 import { Text } from "shared/ui/Text/Text";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { RouterPath } from "shared/config/routeConfig/routeConfig";
+import { DropDown } from "shared/ui/DropDown/DropDown";
+import { Avatar } from "shared/ui/Avatar/Avatar";
 import cls from "./Navbar.module.scss";
 
 interface NavbarProps {
@@ -42,13 +44,21 @@ export const Navbar = ({ className }: NavbarProps) => {
                 <AppLink className={cls.createBtn} to={RouterPath.article_create} theme={AppLinkTheme.PRIMARY}>
                     Создать статью
                 </AppLink>
-                <Button
-                    theme={ButtonTheme.BACKGROUND_INVERTED}
+                <DropDown
+                    directionDropDown="bottom left"
                     className={cls.links}
-                    onClick={onLogout}
-                >
-                    {t("Выйти")}
-                </Button>
+                    items={[
+                        {
+                            content: "Профиль",
+                            href: RouterPath.profile + authData.id,
+                        },
+                        {
+                            content: "Выйти",
+                            onClick: onLogout,
+                        },
+                    ]}
+                    trigger={<Avatar size={30} src={authData.avatar} />}
+                />
             </header>
         );
     }

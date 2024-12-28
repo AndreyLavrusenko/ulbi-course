@@ -36,6 +36,6 @@ export const ListBoxTopStory: Story = {
             { value: "2", content: "Второе значение" },
             { value: "3", content: "Третье значение", disabled: true },
         ],
-        directionDropDown: "top",
+        directionDropDown: "top left",
     },
 };
