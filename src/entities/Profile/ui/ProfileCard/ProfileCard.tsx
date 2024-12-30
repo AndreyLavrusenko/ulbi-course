@@ -71,7 +71,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
     return (
         <VStack gap="8" max className={classNames(style.ProfileCard, mods, [])}>
 
-            <div>
+            <VStack max gap="8">
                 {data?.avatar && <Avatar src={data?.avatar} size={180} />}
                 <Input
                     value={data?.first}
@@ -127,7 +127,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     onChange={onChangeCountry}
                     readOnly={readonly}
                 />
-            </div>
+            </VStack>
         </VStack>
     );
 };

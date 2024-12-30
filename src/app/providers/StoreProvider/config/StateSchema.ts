@@ -3,7 +3,6 @@ import { LoginSchema } from "features/AuthByUsername";
 import {
     AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject, 
 } from "@reduxjs/toolkit";
-import { ProfileSchema } from "entities/Profile";
 import { AxiosInstance } from "axios";
 import { ArticleDetailsSchema } from "entities/Article";
 import {
@@ -12,12 +11,15 @@ import {
 import { AddCommentFormSchema } from "features/AddCommentForm";
 import { ArticlePageSchema } from "pages/ArticlesPage";
 import { ScrollRestorationSchema } from "features/ScrollRestoration";
+import { rtkApi } from "shared/api/rtkApi";
+import { ProfileSchema } from "features/EditableProfileCard";
 
 export interface StateSchema {
 	user: UserSchema,
 	profile: ProfileSchema,
 	articleDetails: ArticleDetailsSchema,
 	scrollRestore: ScrollRestorationSchema,
+	[rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 
 	// async
 	loginForm?: LoginSchema,

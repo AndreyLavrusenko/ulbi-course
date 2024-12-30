@@ -1,7 +1,4 @@
 import React, { memo, useCallback } from "react";
-import { Select } from "shared/ui/Select/Select";
-import { Currency } from "entities/Currency";
-import { classNames } from "shared/lib/classNames/classNames";
 import { Country } from "entities/Country";
 import { ListBox } from "shared/ui/ListBox/ListBox";
 

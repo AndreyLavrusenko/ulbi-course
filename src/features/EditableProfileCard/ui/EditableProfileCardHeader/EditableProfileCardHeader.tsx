@@ -1,16 +1,15 @@
 import React, { useCallback, useMemo } from "react";
 import { Text } from "shared/ui/Text/Text";
+import { HStack } from "shared/ui/Stack";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useSelector } from "react-redux";
 import {
     getProfileData, getProfileReadonly, profileActions, updateProfileData, 
-} from "entities/Profile";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+} from "features/EditableProfileCard";
 import { getUserAuthData } from "entities/User";
-import { HStack } from "shared/ui/Stack/HStack/HStack";
-import style from "./ProfilePageHeader.module.scss";
 
-const ProfilePageHeader = () => {
+export const EditableProfileCardHeader = () => {
     const dispatch = useAppDispatch();
 
     const readonly = useSelector(getProfileReadonly);
@@ -31,11 +30,12 @@ const ProfilePageHeader = () => {
         dispatch(updateProfileData());
     }, [dispatch]);
 
+	
     return (
-        <HStack className={style.header} justify="between" max>
+        <HStack justify="between" max>
             <Text title="Профиль" />
             {canEdit && (
-                <HStack gap="8" className={style.HeaderButton}>
+                <HStack gap="8">
                     {
                         readonly
                             ? <Button theme={ButtonTheme.SECONDARY} onClick={onEdit}>Редактировать</Button>
@@ -51,5 +51,3 @@ const ProfilePageHeader = () => {
         </HStack>
     );
 };
-
-export default ProfilePageHeader;

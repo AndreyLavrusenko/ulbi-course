@@ -1,12 +1,11 @@
 import { configureStore, ReducersMapObject } from "@reduxjs/toolkit";
 import { userReducer } from "entities/User";
-import { To } from "history";
-import { NavigateOptions } from "react-router";
 import { $api } from "shared/api/api";
 import { CombinedState, Reducer } from "redux";
 import { articleDetailsReducer } from "entities/Article";
 import { scrollRestorationReducer } from "features/ScrollRestoration";
-import { profileReducer } from "entities/Profile";
+import { rtkApi } from "shared/api/rtkApi";
+import { profileReducer } from "features/EditableProfileCard";
 import { StateSchema, ThunkExtraArg } from "./StateSchema";
 import { createReducerManager } from "./reducerManager";
 
@@ -21,6 +20,7 @@ export function createReduxStore(
         articleDetails: articleDetailsReducer,
         scrollRestore: scrollRestorationReducer,
         profile: profileReducer,
+        [rtkApi.reducerPath]: rtkApi.reducer,
     };
 
     const reducerManager = createReducerManager(rootReducers);
@@ -37,7 +37,7 @@ export function createReduxStore(
             thunk: {
                 extraArgument: extraArg,
             },
-        }),
+        }).concat(rtkApi.middleware),
     });
 
     // @ts-ignore
