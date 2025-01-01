@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { LoginModal } from "features/AuthByUsername";
 import { useDispatch, useSelector } from "react-redux";
-import { getUserAuthData, userActions } from "entities/User";
+import { getUserAuthData, isUserAdmin, userActions } from "entities/User";
 import { Text } from "shared/ui/Text/Text";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { RouterPath } from "shared/config/routeConfig/routeConfig";
@@ -21,6 +21,7 @@ export const Navbar = ({ className }: NavbarProps) => {
     const [isAuthModal, setIsAuthModal] = useState(false);
     const dispatch = useDispatch();
     const authData = useSelector(getUserAuthData);
+    const isAdmin = useSelector(isUserAdmin);
 
     const { t } = useTranslation();
 
@@ -52,6 +53,10 @@ export const Navbar = ({ className }: NavbarProps) => {
                             content: "Профиль",
                             href: RouterPath.profile + authData.id,
                         },
+                        ...(isAdmin ? [{
+                            content: "Админка",
+                            href: RouterPath.admin_panel,
+                        }] : []),
                         {
                             content: "Выйти",
                             onClick: onLogout,
