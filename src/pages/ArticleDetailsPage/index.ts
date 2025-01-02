@@ -1,9 +1,9 @@
 import { ArticleDetailsPageLazy } from "pages/ArticleDetailsPage/ui/ArticleDetailsPage/ArticleDetailsPage.lazy";
-import { ArticleDetailsCommentSchema } from "pages/ArticleDetailsPage/model/types/ArticleDetailsCommentSchema";
+import { type ArticleDetailsCommentSchema } from "pages/ArticleDetailsPage/model/types/ArticleDetailsCommentSchema";
 import {
-    ArticleDetailsRecommendationsSchema,
+    type ArticleDetailsRecommendationsSchema,
 } from "pages/ArticleDetailsPage/model/types/ArticleDetailsRecommendationsSchema";
-import { ArticleDetailsPageSchema } from "pages/ArticleDetailsPage/model/types";
+import { type ArticleDetailsPageSchema } from "pages/ArticleDetailsPage/model/types";
 import { getCanUserEditArticle } from "pages/ArticleDetailsPage/model/selectors/article";
 
 

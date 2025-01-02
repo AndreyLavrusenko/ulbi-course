@@ -13,8 +13,7 @@ import {
 } from "features/EditableProfileCard/ui/EditableProfileCardHeader/EditableProfileCardHeader";
 
 export { EditableProfileCard } from "./ui/EditableProfileCard/EditableProfileCard";
-export { ProfileSchema } from "features/EditableProfileCard/model/types/EditableProfileCardSchema";
-export { ValidateProfileError } from "features/EditableProfileCard/model/types/EditableProfileCardSchema";
+export { type ProfileSchema } from "features/EditableProfileCard/model/types/EditableProfileCardSchema";
 
 export {
     profileActions,
@@ -30,3 +29,4 @@ export {
     getProfileForm,
     ProfileCard,
 };
+export { ValidateProfileError } from "features/EditableProfileCard/model/const/consts";
