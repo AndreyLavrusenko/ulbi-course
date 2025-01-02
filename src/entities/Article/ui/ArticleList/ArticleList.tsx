@@ -75,7 +75,11 @@ export const ArticleList = ({
             {({
                 width, height, registerChild, scrollTop, isScrolling, onChildScroll, 
             }) => (
-                <div ref={registerChild} className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+                <div
+                    // @ts-ignore
+                    ref={registerChild}
+                    className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+                >
                     {virtualized
                         ? (
                             <List
