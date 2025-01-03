@@ -1,10 +1,8 @@
 import { classNames } from "shared/lib/classNames/classNames";
-
 import { memo, useCallback, useEffect } from "react";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { fetchArticleById } from "entities/Article/model/store/services/fetchArticleById/fetchArticleById";
 import { useSelector } from "react-redux";
-import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsLoading } from "entities/Article";
 import { Text, TextAlign, TextSize } from "shared/ui/Text/Text";
 import { Skeleton } from "shared/ui/Skeleton/Skeleton";
 import { Avatar } from "shared/ui/Avatar/Avatar";
@@ -14,6 +12,7 @@ import { ArticleBlock, ArticleBlockType } from "entities/Article/model/types/art
 import { ArticleCodeBlockComponent } from "entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import { ArticleImageBlockComponent } from "entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent";
 import { ArticleTextBlockComponent } from "entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent";
+import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsLoading } from "../../model/store/selectors/articleDetails";
 import cls from "./ArticleDetails.module.scss";
 
 
