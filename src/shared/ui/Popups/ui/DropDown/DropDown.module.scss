@@ -1,20 +1,3 @@
-.DropDown {
-	position: relative;
-}
-
-.Button {
-	padding: 0;
-
-	margin: 0;
-
-	background: none;
-	border: none;
-
-	cursor: pointer;
-
-	outline: none;
-}
-
 .Menu {
 	position: absolute;
 
@@ -57,22 +40,3 @@
 	color: var(--accent-color);
 }
 
-.OptionBottomLeft {
-	top: 100%;
-	right: 0;
-}
-
-.OptionBottomRight {
-	top: 100%;
-	left: 0;
-}
-
-.OptionTopLeft {
-	bottom: 100%;
-	right: 0;
-}
-
-.OptionTopRight {
-	bottom: 100%;
-	left: 0;
-}
