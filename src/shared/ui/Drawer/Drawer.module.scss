@@ -70,3 +70,19 @@
 		transform: translateY(100%);
 	}
 }
+
+.Sheet {
+	position: fixed;
+	left: 2vw;
+
+	width: 96vw;
+	height: calc(100vh + 100px);
+
+	padding: 15px;
+
+	background: var(--bg-color);
+	border-radius: 12px 12px 0;
+
+	z-index: var(--modal-z-index);
+	touch-action: none;
+}

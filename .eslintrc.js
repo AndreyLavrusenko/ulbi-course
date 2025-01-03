@@ -31,6 +31,7 @@ module.exports = {
         "jsx-a11y/click-events-have-key-events": "off",
         "no-unused-vars": "off",
         "no-tabs": "off",
+        "react/jsx-pascal-case": "off",
         "no-console": "off",
         quotes: ["error", "double"],
         "max-len": ["error", { code: 140 }],

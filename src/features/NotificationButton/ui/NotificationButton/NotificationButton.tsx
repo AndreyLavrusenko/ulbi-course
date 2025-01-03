@@ -7,6 +7,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { useCallback, useState } from "react";
 import { Drawer } from "shared/ui/Drawer/Drawer";
 import { BrowserView, MobileView } from "react-device-detect";
+import { AnimationProvider } from "shared/lib/components/AnimationProvider";
 import cls from "./NotificationButton.module.scss";
 
 
@@ -35,9 +36,11 @@ export const NotificationButton = ({ className }: NotificationButtonProps) => {
         <>
             <MobileView>
                 {trigger}
-                <Drawer isOpen={isOpenDrawer} onClose={onCloseDrawer}>
-                    <NotificationList />
-                </Drawer>
+                <AnimationProvider>
+                    <Drawer isOpen={isOpenDrawer} onClose={onCloseDrawer}>
+                        <NotificationList />
+                    </Drawer>
+                </AnimationProvider>
             </MobileView>
 
             <BrowserView>
