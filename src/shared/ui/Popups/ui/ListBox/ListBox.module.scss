@@ -15,7 +15,7 @@
 	border-radius: 12px;
 	box-shadow: 4px 4px 8px var(--listbox-bg);
 
-	z-index: 10000;
+	z-index: var(--modal-z-index);
 }
 
 .OptionTop {

@@ -32,7 +32,7 @@ export const Navbar = ({ className }: NavbarProps) => {
     const onShowModal = useCallback(() => {
         setIsAuthModal(true);
     }, []);
-
+   
 
     if (authData) {
         return (
@@ -51,7 +51,7 @@ export const Navbar = ({ className }: NavbarProps) => {
     }
 
     return (
-        <header className={classNames(cls.Navbar, {}, [className])}>
+        <HStack justify="end" className={classNames(cls.Navbar, {}, [className])}>
             <Button
                 theme={ButtonTheme.BACKGROUND_INVERTED}
                 className={cls.links}
@@ -62,6 +62,6 @@ export const Navbar = ({ className }: NavbarProps) => {
             {
                 isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
             }
-        </header>
+        </HStack>
     );
 };
