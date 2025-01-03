@@ -28,7 +28,7 @@
 
 	transform: translateY(100%);
 
-	transition: 0.3s transform;
+	transition: 0.4s transform;
 
 	border-top-left-radius: 12px;
 	border-top-right-radius: 12px;
@@ -62,5 +62,11 @@
 
 	.Content {
 		transform: translateY(0%);
+	}
+}
+
+.isClosing {
+	.Content {
+		transform: translateY(100%);
 	}
 }
