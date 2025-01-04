@@ -1,7 +1,7 @@
 import { useLocation, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { getUserAuthData, getUserRoles, UserRole } from "entities/User";
-import { RouterPath } from "shared/config/routeConfig/routeConfig";
+import { getUserAuthData, getUserRoles, UserRole } from "@/entities/User";
+import { RouterPath } from "@/shared/config/routeConfig/routeConfig";
 import { useMemo } from "react";
 
 interface Props {

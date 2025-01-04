@@ -1,12 +1,12 @@
-import { ArticleList } from "entities/Article";
+import { ArticleList } from "@/entities/Article";
 import { useSelector } from "react-redux";
-import { getArticleAdapter } from "pages/ArticlesPage";
+import { getArticleAdapter } from "@/pages/ArticlesPage";
 import {
     getArticlePageError,
     getArticlePageIsLoading,
     getArticlePageView,
-} from "pages/ArticlesPage/model/selectors/articlesPageSelectors";
-import { Text } from "shared/ui/Text/Text";
+} from "@/pages/ArticlesPage/model/selectors/articlesPageSelectors";
+import { Text } from "@/shared/ui/Text/Text";
 
 
 interface ArticleInfiniteListProps {

@@ -1,10 +1,10 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
-import { RouterPath } from "shared/config/routeConfig/routeConfig";
-import { Avatar } from "shared/ui/Avatar/Avatar";
-import { DropDown } from "shared/ui/Popups";
+import { RouterPath } from "@/shared/config/routeConfig/routeConfig";
+import { Avatar } from "@/shared/ui/Avatar/Avatar";
+import { DropDown } from "@/shared/ui/Popups";
 import { useCallback } from "react";
-import { getUserAuthData, isUserAdmin, userActions } from "entities/User";
+import { getUserAuthData, isUserAdmin, userActions } from "@/entities/User";
 import { useDispatch, useSelector } from "react-redux";
 import cls from "./AvatarDropDown.module.scss";
 

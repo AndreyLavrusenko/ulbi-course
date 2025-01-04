@@ -1,7 +1,7 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
-import { Text } from "shared/ui/Text/Text";
-import { Comment } from "entities/Comment";
+import { Text } from "@/shared/ui/Text/Text";
+import { Comment } from "@/entities/Comment";
 import { CommentCard } from "../CommentCard/CommentCard";
 import cls from "./CommentList.module.scss";
 

@@ -1,25 +1,25 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
-import { ArticleViewSelector } from "features/ArticleViewSelector";
+import { ArticleViewSelector } from "@/features/ArticleViewSelector";
 import { useSelector } from "react-redux";
 import {
     getArticlePageOrder, getArticlePageSearch,
     getArticlePageSort, getArticlePageType,
     getArticlePageView,
-} from "pages/ArticlesPage/model/selectors/articlesPageSelectors";
+} from "@/pages/ArticlesPage/model/selectors/articlesPageSelectors";
 import { useCallback, useMemo } from "react";
 import {
     ArticleSortSelect, ArticlesSortField, ArticleTypeTabs, ArticleView, 
-} from "entities/Article";
-import { articlePageActions } from "pages/ArticlesPage";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Card } from "shared/ui/Card/Card";
-import { Input } from "shared/ui/Input/Input";
-import { SortOrder } from "shared/types";
-import { fetchArticleList } from "pages/ArticlesPage/model/services/fetchArticleList/fetchArticleList";
-import { useDebounce } from "shared/lib/hooks/useDebounce/useDebounce";
-import { TabItem, Tabs } from "shared/ui/Tabs/Tabs";
-import { ArticleType } from "entities/Article/model/types/article";
+} from "@/entities/Article";
+import { articlePageActions } from "@/pages/ArticlesPage";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { Card } from "@/shared/ui/Card/Card";
+import { Input } from "@/shared/ui/Input/Input";
+import { SortOrder } from "@/shared/types";
+import { fetchArticleList } from "@/pages/ArticlesPage/model/services/fetchArticleList/fetchArticleList";
+import { useDebounce } from "@/shared/lib/hooks/useDebounce/useDebounce";
+import { TabItem, Tabs } from "@/shared/ui/Tabs/Tabs";
+import { ArticleType } from "@/entities/Article/model/types/article";
 import cls from "./ArticlePageFilter.module.scss";
 
 

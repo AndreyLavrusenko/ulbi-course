@@ -1,8 +1,8 @@
-import { Skeleton } from "shared/ui/Skeleton/Skeleton";
+import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
 import { Meta, StoryObj } from "@storybook/react";
-import { ThemeDecorator } from "shared/config/storybook/themeDecorator/ThemeDecorator";
-import { Theme } from "app/providers/ThemeProvider";
-import { ModalStoryDark } from "shared/ui/Modal/Modal.stories";
+import { ThemeDecorator } from "@/shared/config/storybook/themeDecorator/ThemeDecorator";
+import { Theme } from "@/app/providers/ThemeProvider";
+import { ModalStoryDark } from "@/shared/ui/Modal/Modal.stories";
 
 const meta: Meta<typeof Skeleton> = {
     title: "shared/Skeleton",

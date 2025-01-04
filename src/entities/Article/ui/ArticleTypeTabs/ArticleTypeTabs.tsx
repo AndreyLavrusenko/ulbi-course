@@ -1,8 +1,8 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
 import { useCallback, useMemo } from "react";
-import { TabItem, Tabs } from "shared/ui/Tabs/Tabs";
-import { ArticleType } from "entities/Article/model/types/article";
+import { TabItem, Tabs } from "@/shared/ui/Tabs/Tabs";
+import { ArticleType } from "@/entities/Article/model/types/article";
 import cls from "./ArticleTypeTabs.module.scss";
 
 

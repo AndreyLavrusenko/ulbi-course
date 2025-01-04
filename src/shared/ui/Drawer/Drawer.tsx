@@ -1,14 +1,14 @@
-import { classNames, Mods } from "shared/lib/classNames/classNames";
-
-import {
+import { 
     memo, ReactNode, useCallback, useEffect, 
 } from "react";
-import { useTheme } from "app/providers/ThemeProvider";
-import { Portal } from "shared/ui/Portal/Portal";
-import { Overlay } from "shared/ui/Overlay/Overlay";
-import { useModal } from "shared/lib/hooks/useModal/useModal";
-import { useAnimationLibs } from "shared/lib/components/AnimationProvider";
-import { Loader } from "shared/ui/Loader/Loader";
+import { classNames, Mods } from "@/shared/lib/classNames/classNames";
+
+import { useTheme } from "@/app/providers/ThemeProvider";
+import { Portal } from "@/shared/ui/Portal/Portal";
+import { Overlay } from "@/shared/ui/Overlay/Overlay";
+import { useModal } from "@/shared/lib/hooks/useModal/useModal";
+import { useAnimationLibs } from "@/shared/lib/components/AnimationProvider";
+import { Loader } from "@/shared/ui/Loader/Loader";
 import cls from "./Drawer.module.scss";
 
 interface DrawerProps {

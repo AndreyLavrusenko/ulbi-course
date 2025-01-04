@@ -1,11 +1,11 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { memo, useCallback, useEffect } from "react";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { Currency } from "entities/Currency";
-import { Country } from "entities/Country";
-import { Text, TextTheme } from "shared/ui/Text/Text";
+import { Currency } from "@/entities/Currency";
+import { Country } from "@/entities/Country";
+import { Text, TextTheme } from "@/shared/ui/Text/Text";
 import {
     EditableProfileCardHeader,
     fetchProfileData,
@@ -16,8 +16,8 @@ import {
     getProfileValidateError,
     profileActions, ProfileCard, profileReducer,
     ValidateProfileError,
-} from "features/EditableProfileCard";
-import { DynamicModuleLoader, ReducerList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+} from "@/features/EditableProfileCard";
+import { DynamicModuleLoader, ReducerList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 
 interface EditableProfileCardProps {
     className?: string;

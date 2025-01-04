@@ -1,7 +1,7 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
 import { useParams } from "react-router-dom";
-import { Page } from "widget/Page/Page";
+import { Page } from "@/widget/Page/Page";
 import cls from "./ArticleEditPage.module.scss";
 
 

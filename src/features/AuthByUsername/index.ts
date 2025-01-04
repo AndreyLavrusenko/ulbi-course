@@ -1,4 +1,4 @@
-import { LoginSchema } from "features/AuthByUsername/model/types/loginSchema";
+import { LoginSchema } from "@/features/AuthByUsername/model/types/loginSchema";
 import { LoginModal } from "./ui/LoginModal/LoginModal";
 
 export {

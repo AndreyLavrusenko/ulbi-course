@@ -1,13 +1,13 @@
 import React, { useCallback, useMemo } from "react";
-import { Text } from "shared/ui/Text/Text";
-import { HStack } from "shared/ui/Stack";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { Text } from "@/shared/ui/Text/Text";
+import { HStack } from "@/shared/ui/Stack";
+import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useSelector } from "react-redux";
 import {
     getProfileData, getProfileReadonly, profileActions, updateProfileData, 
-} from "features/EditableProfileCard";
-import { getUserAuthData } from "entities/User";
+} from "@/features/EditableProfileCard";
+import { getUserAuthData } from "@/entities/User";
 
 export const EditableProfileCardHeader = () => {
     const dispatch = useAppDispatch();

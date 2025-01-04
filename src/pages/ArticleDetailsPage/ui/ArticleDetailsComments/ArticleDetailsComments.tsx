@@ -1,12 +1,12 @@
-import { Text, TextSize } from "shared/ui/Text/Text";
-import { AddCommentForm } from "features/AddCommentForm";
-import { CommentList } from "entities/Comment";
+import { Text, TextSize } from "@/shared/ui/Text/Text";
+import { AddCommentForm } from "@/features/AddCommentForm";
+import { CommentList } from "@/entities/Comment";
 import { useSelector } from "react-redux";
 import { useCallback, useEffect } from "react";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {
     fetchCommentsByArticleId,
-} from "pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
+} from "@/pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { getArticleComments } from "../../model/slice/articleDetailsCommentsSlice";
 import { getArticleCommentsLoading } from "../../model/selectors/comments";
 import {

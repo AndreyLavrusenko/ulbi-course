@@ -1,11 +1,11 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
-import { Article, ArticleView } from "entities/Article";
-import { ArticleListItemSkeleton } from "entities/Article/ui/ArticleListItem/ArticleListItemSkeleton";
-import { Text } from "shared/ui/Text/Text";
+import { Article, ArticleView } from "@/entities/Article";
+import { ArticleListItemSkeleton } from "@/entities/Article/ui/ArticleListItem/ArticleListItemSkeleton";
+import { Text } from "@/shared/ui/Text/Text";
 import { HTMLAttributeAnchorTarget } from "react";
 import { List, ListRowProps, WindowScroller } from "react-virtualized";
-import { PAGE_ID } from "pages/ArticlesPage/ui/ArticlePage/ArticlesPage";
+import { PAGE_ID } from "@/pages/ArticlesPage/ui/ArticlePage/ArticlesPage";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import cls from "./ArticleList.module.scss";
 

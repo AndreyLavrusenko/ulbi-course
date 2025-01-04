@@ -1,9 +1,9 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
-import { Select, SelectOption } from "shared/ui/Select/Select";
+import { Select, SelectOption } from "@/shared/ui/Select/Select";
 import { useMemo } from "react";
-import { SortOrder } from "shared/types";
-import { ArticlesSortField } from "entities/Article";
+import { SortOrder } from "@/shared/types";
+import { ArticlesSortField } from "@/entities/Article";
 import cls from "./ArticleSortSelect.module.scss";
 
 

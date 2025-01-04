@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from "react";
-import { Country } from "entities/Country";
-import { ListBox } from "shared/ui/Popups/ui/ListBox/ListBox";
+import { Country } from "@/entities/Country";
+import { ListBox } from "@/shared/ui/Popups/ui/ListBox/ListBox";
 
 interface CountrySelectProps {
 	value?: Country,

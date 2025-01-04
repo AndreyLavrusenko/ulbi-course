@@ -1,11 +1,11 @@
 import { configureStore, ReducersMapObject } from "@reduxjs/toolkit";
-import { userReducer } from "entities/User";
-import { $api } from "shared/api/api";
+import { userReducer } from "@/entities/User";
+import { $api } from "@/shared/api/api";
 import { CombinedState, Reducer } from "redux";
-import { articleDetailsReducer } from "entities/Article";
-import { scrollRestorationReducer } from "features/ScrollRestoration";
-import { rtkApi } from "shared/api/rtkApi";
-import { profileReducer } from "features/EditableProfileCard";
+import { articleDetailsReducer } from "@/entities/Article";
+import { scrollRestorationReducer } from "@/features/ScrollRestoration";
+import { rtkApi } from "@/shared/api/rtkApi";
+import { profileReducer } from "@/features/EditableProfileCard";
 import { StateSchema, ThunkExtraArg } from "./StateSchema";
 import { createReducerManager } from "./reducerManager";
 

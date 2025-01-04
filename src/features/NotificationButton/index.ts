@@ -1,4 +1,4 @@
-import { NotificationButton } from "features/NotificationButton/ui/NotificationButton/NotificationButton";
+import { NotificationButton } from "@/features/NotificationButton/ui/NotificationButton/NotificationButton";
 
 export {
     NotificationButton,

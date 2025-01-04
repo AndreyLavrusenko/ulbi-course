@@ -1,5 +1,5 @@
 import axios from "axios";
-import { LOCALSTORAGE_USER_KEY } from "shared/const/localstorage";
+import { LOCALSTORAGE_USER_KEY } from "@/shared/const/localstorage";
 
 export const baseUrl = __IS_DEV__ ? "http://localhost:8000" : "https://production";
 

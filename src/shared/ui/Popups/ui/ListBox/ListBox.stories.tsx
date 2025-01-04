@@ -1,4 +1,4 @@
-import { ListBox, ListBoxItem } from "shared/ui/Popups/ui/ListBox/ListBox";
+import { ListBox, ListBoxItem } from "@/shared/ui/Popups/ui/ListBox/ListBox";
 import { Meta, StoryObj } from "@storybook/react";
 
 

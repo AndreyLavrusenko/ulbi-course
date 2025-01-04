@@ -1,15 +1,15 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
-import { Input } from "shared/ui/Input/Input";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { Input } from "@/shared/ui/Input/Input";
+import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
 import { useSelector } from "react-redux";
 import { useCallback } from "react";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {
     addCommentFormSliceActions,
     addCommentFormSliceReducer,
-} from "features/AddCommentForm/model/slice/addCommentFormSlice";
-import { DynamicModuleLoader, ReducerList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+} from "@/features/AddCommentForm/model/slice/addCommentFormSlice";
+import { DynamicModuleLoader, ReducerList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import cls from "./AddCommentForm.module.scss";
 import {
     getAddCommentFormError,

@@ -1,5 +1,5 @@
-import { Text } from "shared/ui/Text/Text";
-import { Page } from "widget/Page/Page";
+import { Text } from "@/shared/ui/Text/Text";
+import { Page } from "@/widget/Page/Page";
 
 const ForbiddenPage = () => (
     <Page>

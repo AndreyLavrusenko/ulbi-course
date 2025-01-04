@@ -1,9 +1,9 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { memo } from "react";
-import { Text, TextSize } from "shared/ui/Text/Text";
-import { ArticleList } from "entities/Article";
-import { VStack } from "shared/ui/Stack";
-import { Loader } from "shared/ui/Loader/Loader";
+import { Text, TextSize } from "@/shared/ui/Text/Text";
+import { ArticleList } from "@/entities/Article";
+import { VStack } from "@/shared/ui/Stack";
+import { Loader } from "@/shared/ui/Loader/Loader";
 import { useArticleRecommendationsList } from "../../api/articleRecommendationsApi";
 
 interface ArticleRecommendationsListProps {
