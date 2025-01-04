@@ -1,5 +1,5 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
 import { memo } from "react";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { Text, TextSize } from "@/shared/ui/Text/Text";
 import { ArticleList } from "@/entities/Article";
 import { VStack } from "@/shared/ui/Stack";
@@ -31,7 +31,6 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
                 articles={articles}
                 isLoading={isLoading}
                 target="_blank"
-                virtualized={false}
             />
         </VStack>
     );
