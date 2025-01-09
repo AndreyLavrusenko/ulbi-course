@@ -1,12 +1,13 @@
-import { Profile } from "entities/Profile";
-import { Text, TextAlign, TextTheme } from "shared/ui/Text/Text";
-import { Input } from "shared/ui/Input/Input";
-import { Loader } from "shared/ui/Loader/Loader";
-import { classNames, Mods } from "shared/lib/classNames/classNames";
-import { Avatar } from "shared/ui/Avatar/Avatar";
-import { Currency } from "entities/Currency/model/types/currency";
-import { CurrencySelect } from "entities/Currency";
-import { Country, CountrySelect } from "entities/Country";
+import { Profile } from "@/entities/Profile";
+import { Text, TextAlign, TextTheme } from "@/shared/ui/Text/Text";
+import { Input } from "@/shared/ui/Input/Input";
+import { Loader } from "@/shared/ui/Loader/Loader";
+import { classNames, Mods } from "@/shared/lib/classNames/classNames";
+import { Avatar } from "@/shared/ui/Avatar/Avatar";
+import { Currency } from "@/entities/Currency/model/types/currency";
+import { CurrencySelect } from "@/entities/Currency";
+import { Country, CountrySelect } from "@/entities/Country";
+import { HStack, VStack } from "@/shared/ui/Stack";
 import style from "./Profile.module.scss";
 
 
@@ -56,21 +57,21 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (error) {
         return (
-            <div className={classNames(style.ProfileCard, {}, [style.error])}>
+            <HStack max justify="center" align="center">
                 <Text
                     theme={TextTheme.ERROR}
                     title="Произошла ошибка при загрузке"
                     text={error}
                     align={TextAlign.CENTER}
                 />
-            </div>
+            </HStack>
         );
     }
 
     return (
-        <div className={classNames(style.ProfileCard, mods, [])}>
+        <VStack gap="8" max className={classNames(style.ProfileCard, mods, [])}>
 
-            <div className={style.data}>
+            <VStack max gap="8">
                 {data?.avatar && <Avatar src={data?.avatar} size={180} />}
                 <Input
                     value={data?.first}
@@ -126,7 +127,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     onChange={onChangeCountry}
                     readOnly={readonly}
                 />
-            </div>
-        </div>
+            </VStack>
+        </VStack>
     );
 };

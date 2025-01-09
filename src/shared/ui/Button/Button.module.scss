@@ -4,6 +4,11 @@
 	font: var(--font-s);
 
 	cursor: pointer;
+	transition: .2s;
+}
+
+.Button:hover {
+	opacity: 0.7;
 }
 
 .Button:disabled {
@@ -87,4 +92,8 @@
 	border: none;
 
 	color: var(--accent-color);
+}
+
+.fullWidth {
+	width: 100%;
 }

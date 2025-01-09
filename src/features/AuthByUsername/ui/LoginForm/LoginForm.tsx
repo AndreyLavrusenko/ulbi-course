@@ -1,12 +1,12 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
-import { Input } from "shared/ui/Input/Input";
+import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
+import { Input } from "@/shared/ui/Input/Input";
 import { memo, useCallback, useEffect } from "react";
 import { useSelector, useStore } from "react-redux";
-import { Text, TextTheme } from "shared/ui/Text/Text";
-import { DynamicModuleLoader, ReducerList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { Text, TextTheme } from "@/shared/ui/Text/Text";
+import { DynamicModuleLoader, ReducerList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { getLoginUsername } from "../../model/selectors/getLoginUsername/getLoginUsername";
 import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword";
 import { getLoginLoading } from "../../model/selectors/getLoginLoading/getLoginLoading";
@@ -52,7 +52,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
 
 
     return (
-        <DynamicModuleLoader reducers={initialReducers}>
+        <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount={false}>
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text title="Форма авторизации" />
                 <Input autoFocus value={username} onChange={onChangeUsername} placeholder="Логин" />

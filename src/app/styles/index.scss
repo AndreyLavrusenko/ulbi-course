@@ -11,8 +11,24 @@
 	margin: 0;
 }
 
+*::-webkit-scrollbar {
+	width: 8px;
+	height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+	background: var(--card-bg);
+}
+
+*::-webkit-scrollbar-thumb {
+	background: var(--primary-color);
+	border-radius: 20px;
+}
+
+
 .app,
-.app-modal {
+.app-modal,
+.app_drawer {
 	font: var(--font-m);
 	color: var(--primary-color);
 }
@@ -28,10 +44,4 @@
 	display: flex;
 
 	color: var(--primary-color);
-}
-
-.page-wrapper {
-	flex-grow: 1;
-
-	padding: 20px;
 }

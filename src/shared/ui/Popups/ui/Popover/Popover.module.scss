@@ -1,0 +1,13 @@
+.Panel {
+	position: absolute;
+
+	top: 100%;
+
+	padding: 12px;
+
+	background: var(--bg-color-secondary);
+	border-radius: 8px;
+	box-shadow: 4px 4px 8px var(--listbox-bg);
+
+	z-index: var(--modal-z-index);
+}

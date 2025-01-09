@@ -1,4 +1,4 @@
-import { classNames, Mods } from "shared/lib/classNames/classNames";
+import { classNames, Mods } from "@/shared/lib/classNames/classNames";
 
 import React, {
     InputHTMLAttributes, memo, useCallback, useEffect, useRef,
@@ -52,17 +52,16 @@ export const Input = memo((props: InputProps) => {
 
 
     return (
-        <div>
-            <input
-                ref={inputRef}
-                className={classNames(cls.Input, mods, [className])}
-                placeholder={placeholder}
-                type={type}
-                readOnly={readOnly}
-                value={value}
-                onChange={onChangeHandler}
-                {...otherProps}
-            />
-        </div>
+
+        <input
+            ref={inputRef}
+            className={classNames(cls.Input, mods, [className])}
+            placeholder={placeholder}
+            type={type}
+            readOnly={readOnly}
+            value={value}
+            onChange={onChangeHandler}
+            {...otherProps}
+        />
     );
 });

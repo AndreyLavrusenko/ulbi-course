@@ -1,0 +1,88 @@
+.Drawer {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	display: flex;
+	align-items: flex-end;
+
+	opacity: 0;
+
+	pointer-events: none;
+	z-index: -1;
+}
+
+.Content {
+	position: relative;
+	bottom: 0;
+
+	width: 100%;
+	height: 70%;
+	min-height: 100px;
+
+	padding: 20px;
+
+	background-color: var(--bg-color);
+
+	transform: translateY(100%);
+
+	transition: 0.4s transform;
+
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+	
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.Content::before {
+	position: relative;
+	bottom: 40px;
+
+	display: block;
+
+	width: 100px;
+	height: 10px;
+
+	margin: auto;
+
+	background: var(--bg-color);
+	border-radius: 12px;
+
+	content: "";
+}
+
+.Opened {
+	opacity: 1;
+
+	pointer-events: auto;
+	z-index: var(--modal-z-index);
+
+	.Content {
+		transform: translateY(0%);
+	}
+}
+
+.isClosing {
+	.Content {
+		transform: translateY(100%);
+	}
+}
+
+.Sheet {
+	position: fixed;
+	left: 2vw;
+
+	width: 96vw;
+	height: calc(100vh + 100px);
+
+	padding: 15px;
+
+	background: var(--bg-color);
+	border-radius: 12px 12px 0;
+
+	z-index: var(--modal-z-index);
+	touch-action: none;
+}
