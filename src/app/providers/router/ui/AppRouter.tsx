@@ -3,8 +3,8 @@ import {
     memo, Suspense, useCallback,
 } from "react";
 import { PageLoader } from "@/widget/PageLoader";
-import { RequireAuth } from "@/app/providers/router/ui/RequireAuth";
-import { routeConfig } from "@/app/providers/router/config/routeConfig";
+import { RequireAuth } from "./RequireAuth";
+import { routeConfig } from "../config/routeConfig";
 import { AppRoutesProps } from "@/shared/types/router";
 
 export const AppRouter = memo(() => {

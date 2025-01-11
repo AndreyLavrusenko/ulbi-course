@@ -3,7 +3,6 @@ import { Modal } from "@/shared/ui/Modal/Modal";
 import LoginForm from "@/features/AuthByUsername/ui/LoginForm/LoginForm";
 import { StoreDecorator } from "@/shared/config/storybook/storeDecorator/StoreDecorator";
 import { ThemeDecorator } from "@/shared/config/storybook/themeDecorator/ThemeDecorator";
-import { Theme } from "@/app/providers/ThemeProvider";
 
 
 const meta: Meta<typeof LoginForm> = {
