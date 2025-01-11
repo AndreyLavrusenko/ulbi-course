@@ -6,12 +6,12 @@ import { getUserAuthData } from "@/entities/User";
 import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
 
 
-interface ArticleRatingProps {
+export interface ArticleRatingProps {
 	articleId: string
 }
 
 
-export const ArticleRating = ({ articleId }: ArticleRatingProps) => {
+const ArticleRating = ({ articleId }: ArticleRatingProps) => {
     const userData = useSelector(getUserAuthData);
 
     const { data, isLoading } = useGetArticleRating({ articleId, userId: userData?.id ?? "" });
@@ -58,3 +58,5 @@ export const ArticleRating = ({ articleId }: ArticleRatingProps) => {
         />
     );
 };
+
+export default ArticleRating;

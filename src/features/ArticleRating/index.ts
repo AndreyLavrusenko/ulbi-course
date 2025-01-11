@@ -1,5 +1,5 @@
-import { ArticleRating } from "@/features/ArticleRating/ui/ArticleRating";
+import { ArticleRatingLazy } from "@/features/ArticleRating/ui/ArticleRating.lazy";
 
 export {
-    ArticleRating,
+    ArticleRatingLazy as ArticleRating,
 };
