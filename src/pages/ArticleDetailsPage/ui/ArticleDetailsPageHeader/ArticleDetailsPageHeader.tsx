@@ -1,14 +1,14 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
 
-import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
 import { useCallback, useMemo } from "react";
-import { RouterPath } from "@/shared/config/routeConfig/routeConfig";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { getUserAuthData } from "@/entities/User";
 import { getArticleDetailsData } from "@/entities/Article";
 import { getCanUserEditArticle } from "@/pages/ArticleDetailsPage";
 import cls from "./ArticleDetailsPageHeader.module.scss";
+import { RouterPath } from "@/shared/const/router";
 
 
 interface ArticleDetailsPageHeaderProps {
