@@ -1,7 +1,7 @@
 import { UserRole } from "@/entities/User/model/const/consts";
 
 export interface User {
-	id: number,
+	id: string,
 	username: string,
 	avatar?: string,
 	roles: UserRole[]
