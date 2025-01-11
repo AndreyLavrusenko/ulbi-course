@@ -13,7 +13,7 @@ import { ArticleBlockType, ArticleTextBlock } from "@/entities/Article/model/typ
 import { ArticleTextBlockComponent } from "@/entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent";
 import { AppLink } from "@/shared/ui/AppLink/AppLink";
 import cls from "./ArticleListItem.module.scss";
-import { RouterPath } from "@/shared/const/router";
+import { getRouteArticleDetails } from "@/shared/const/router";
 
 interface ArticleListItemProps {
 	className?: string,
@@ -54,7 +54,7 @@ export const ArticleListItem = ({
                         <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
                     )}
                     <div className={cls.footer}>
-                        <AppLink to={`${RouterPath.articles}/${article.id}`} className={cls.footerWrapper}>
+                        <AppLink to={getRouteArticleDetails(article.id)} className={cls.footerWrapper}>
                             <Button theme={ButtonTheme.SECONDARY}>Читать далее...</Button>
                             {views}
                         </AppLink>
@@ -67,7 +67,7 @@ export const ArticleListItem = ({
     return (
         <AppLink
             target={target}
-            to={`${RouterPath.articles}/${article.id}`}
+            to={getRouteArticleDetails(article.id)}
             className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
         >
             <Card>

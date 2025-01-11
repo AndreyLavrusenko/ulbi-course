@@ -1,14 +1,13 @@
 
-import { useCallback, useMemo } from "react";
+import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { getUserAuthData } from "@/entities/User";
 import { getArticleDetailsData } from "@/entities/Article";
 import { getCanUserEditArticle } from "@/pages/ArticleDetailsPage";
 import cls from "./ArticleDetailsPageHeader.module.scss";
-import { RouterPath } from "@/shared/const/router";
+import { getRouteArticleEdit, getRouteArticles } from "@/shared/const/router";
 
 
 interface ArticleDetailsPageHeaderProps {
@@ -23,11 +22,11 @@ export const ArticleDetailsPageHeader = ({ className }: ArticleDetailsPageHeader
     const isEditButtonVisible = useSelector(getCanUserEditArticle);
     
     const onBackToList = useCallback(() => {
-        navigate(RouterPath.articles);
+        navigate(getRouteArticles());
     }, [navigate]);
 
     const onEditArticle = useCallback(() => {
-        navigate(`${RouterPath.articles}/${article?.id}/edit`);
+        navigate(getRouteArticleEdit(article?.id ?? ""));
     }, [navigate, article?.id]);
 
     return (

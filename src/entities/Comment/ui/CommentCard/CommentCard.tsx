@@ -5,7 +5,7 @@ import { Text } from "@/shared/ui/Text/Text";
 import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
 import { AppLink } from "@/shared/ui/AppLink/AppLink";
 import cls from "./CommentCard.module.scss";
-import { RouterPath } from "@/shared/const/router";
+import { getRouteProfile } from "@/shared/const/router";
 
 
 interface CommentCardProps {
@@ -32,7 +32,7 @@ export const CommentCard = (props: CommentCardProps) => {
 
     return (
         <div className={classNames(cls.CommentCard, {}, [className])}>
-            <AppLink to={`${RouterPath.profile}${comment.user.id}`} className={cls.Header}>
+            <AppLink to={getRouteProfile(comment.user.id)} className={cls.Header}>
                 {comment.user.avatar && <Avatar src={comment.user.avatar} size={30} />}
                 <Text className={cls.Username} title={comment.user.username} />
             </AppLink>

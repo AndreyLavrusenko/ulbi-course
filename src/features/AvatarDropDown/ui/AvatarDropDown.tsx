@@ -6,7 +6,7 @@ import { Avatar } from "@/shared/ui/Avatar/Avatar";
 import { DropDown } from "@/shared/ui/Popups";
 import { getUserAuthData, isUserAdmin, userActions } from "@/entities/User";
 import cls from "./AvatarDropDown.module.scss";
-import { RouterPath } from "@/shared/const/router";
+import { getRouteAdmin, getRouteProfile } from "@/shared/const/router";
 
 
 interface AvatarDropDownProps {
@@ -35,11 +35,11 @@ export const AvatarDropDown = ({ className }: AvatarDropDownProps) => {
             items={[
                 {
                     content: "Профиль",
-                    href: RouterPath.profile + authData.id,
+                    href: getRouteProfile(authData.id),
                 },
                 ...(isAdmin ? [{
                     content: "Админка",
-                    href: RouterPath.admin_panel,
+                    href: getRouteAdmin(),
                 }] : []),
                 {
                     content: "Выйти",

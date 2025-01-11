@@ -1,15 +1,15 @@
+import { useCallback, useMemo } from "react";
 import { classNames } from "@/shared/lib/classNames/classNames";
 
-import { useCallback, useMemo } from "react";
 import { TabItem, Tabs } from "@/shared/ui/Tabs/Tabs";
-import { ArticleType } from "@/entities/Article/model/types/article";
+import { ArticleType } from "@/entities/Article";
 import cls from "./ArticleTypeTabs.module.scss";
 
 
 interface ArticleTypeTabsProps {
-	className?: string,
-	value: ArticleType,
-	onChangeTab: (type: ArticleType) => void
+    className?: string,
+    value: ArticleType,
+    onChangeTab: (type: ArticleType) => void
 }
 
 
@@ -36,7 +36,7 @@ export const ArticleTypeTabs = ({ className, value, onChangeTab }: ArticleTypeTa
     const onTabClick = useCallback((tab: TabItem) => {
         onChangeTab(tab.value as ArticleType);
     }, [onChangeTab]);
-	
+
     return (
         <div className={classNames(cls.ArticleTypeTabs, {}, [className])}>
             <Tabs

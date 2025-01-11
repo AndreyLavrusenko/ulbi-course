@@ -12,7 +12,7 @@ import { HStack } from "@/shared/ui/Stack";
 import { NotificationButton } from "@/features/NotificationButton";
 import { AvatarDropDown } from "@/features/AvatarDropDown";
 import cls from "./Navbar.module.scss";
-import { RouterPath } from "@/shared/const/router";
+import { getRouteArticleCreate } from "@/shared/const/router";
 
 interface NavbarProps {
     className?: string;
@@ -38,7 +38,7 @@ export const Navbar = ({ className }: NavbarProps) => {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
                 <Text className={cls.appName} title="Ulbi App" />
-                <AppLink className={cls.createBtn} to={RouterPath.article_create} theme={AppLinkTheme.PRIMARY}>
+                <AppLink className={cls.createBtn} to={getRouteArticleCreate()} theme={AppLinkTheme.PRIMARY}>
                     Создать статью
                 </AppLink>
                 <HStack gap="16" className={cls.actions}>
