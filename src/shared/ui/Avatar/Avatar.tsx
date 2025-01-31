@@ -1,6 +1,8 @@
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { CSSProperties, useMemo } from "react";
 import style from "./Avatar.module.scss";
+import {AppImage} from "@/shared/ui/AppImage/AppImage";
+import {Skeleton} from "@/shared/ui/Skeleton/Skeleton";
 
 interface Props {
 	src?: string,
@@ -15,7 +17,8 @@ export const Avatar = ({ src, size, className }: Props) => {
     }), [size]);
 
     return (
-        <img
+        <AppImage
+            fallback={<Skeleton width={size} height={size} border={'6'} />}
             src={src}
             style={styles}
             className={classNames(style.avatar, {}, [className])}
