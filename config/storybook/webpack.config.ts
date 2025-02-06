@@ -4,8 +4,7 @@ import { BuildPaths } from "../build/types/config";
 import { buildCssLoaders } from "../build/loaders/buildCssLoaders";
 import { buildSvgLoaders } from "../build/loaders/buildSvgLoaders";
 
-
-export default ({ config }: {config: webpack.Configuration}) => {
+export default ({ config }: { config: webpack.Configuration }) => {
     const paths: BuildPaths = {
         build: "",
         html: "",
@@ -27,9 +26,11 @@ export default ({ config }: {config: webpack.Configuration}) => {
     config.module.rules.push(buildSvgLoaders());
     config.module.rules.push(buildCssLoaders(true));
 
-    config.plugins.push(new webpack.DefinePlugin({
-        __IS_DEV__: true,
-    }));
+    config.plugins.push(
+        new webpack.DefinePlugin({
+            __IS_DEV__: true,
+        }),
+    );
 
     return config;
 };

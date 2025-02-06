@@ -1,5 +1,3 @@
 import { MainPageLazy } from "@/pages/MainPage/ui/MainPage.lazy";
 
-export {
-    MainPageLazy as MainPage,
-};
+export { MainPageLazy as MainPage };

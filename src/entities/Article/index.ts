@@ -1,9 +1,15 @@
 import { ArticleDetails } from "@/entities/Article/ui/ArticleDetails/ArticleDetails";
 import {
-    type Article, ArticlesSortField, ArticleView, ArticleType,
+    type Article,
+    ArticlesSortField,
+    ArticleView,
+    ArticleType,
 } from "@/entities/Article/model/types/article";
 import { type ArticleDetailsSchema } from "@/entities/Article/model/store/types/articleDetailsSchema";
-import { articleDetailsActions, articleDetailsReducer } from "@/entities/Article/model/store/slices/articleDetailsSlice";
+import {
+    articleDetailsActions,
+    articleDetailsReducer,
+} from "@/entities/Article/model/store/slices/articleDetailsSlice";
 import {
     getArticleDetailsData,
     getArticleDetailsError,

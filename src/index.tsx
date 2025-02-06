@@ -9,7 +9,6 @@ import "./app/styles/index.scss";
 import { StoreProvider } from "@/app/providers/StoreProvider";
 import { createRoot } from "react-dom/client";
 
-
 const container = document.getElementById("root");
 
 if (!container) {

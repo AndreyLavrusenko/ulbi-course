@@ -4,7 +4,12 @@ module.exports = {
         es2021: true,
         jest: true,
     },
-    extends: ["plugin:react/recommended", "airbnb", "plugin:storybook/recommended"],
+    extends: [
+        "plugin:react/recommended",
+        "airbnb",
+        "plugin:storybook/recommended",
+        "prettier",
+    ],
     parser: "@typescript-eslint/parser",
     parserOptions: {
         ecmaFeatures: {
@@ -13,18 +18,14 @@ module.exports = {
         ecmaVersion: "latest",
         sourceType: "module",
     },
-    plugins: [
-        "react",
-        "@typescript-eslint",
-        "react-hooks",
-    ],
+    plugins: ["react", "@typescript-eslint", "react-hooks"],
     rules: {
-        "react/jsx-indent": [2, 4],
-        "react/jsx-indent-props": [2, 4],
         "no-undef": "off",
         "prefer-regex-literals": "off",
-        indent: [2, 4],
-        "react/jsx-filename-extension": [2, { extensions: [".js", ".jsx", ".tsx"] }],
+        "react/jsx-filename-extension": [
+            2,
+            { extensions: [".js", ".jsx", ".tsx"] },
+        ],
         "import/no-unresolved": "off",
         "import/prefer-default-export": "off",
         "jsx-a11y/no-static-element-interactions": "off",
@@ -52,6 +53,7 @@ module.exports = {
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "error",
         "no-param-reassign": "off",
+        "react/jsx-max-props-per-line": ["error", { maximum: 3 }],
     },
     globals: {
         __IS_DEV__: true,
