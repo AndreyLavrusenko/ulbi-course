@@ -1,15 +1,16 @@
+import { useCallback, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { DynamicModuleLoader, ReducerList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { articlePageReducer } from "@/pages/ArticlesPage";
-import { useCallback, useEffect } from "react";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { Page } from "@/widget/Page/Page";
 import { fetchNextArticlePage } from "@/pages/ArticlesPage/model/services/fetchNextArticlePage/fetchNextArticlePage";
 import { initArticlesPage } from "@/pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage";
 import { ArticlePageFilter } from "@/pages/ArticlesPage/ui/ArticlePageFilter/ArticlePageFilter";
-import { useSearchParams } from "react-router-dom";
 import { ArticleInfiniteList } from "@/pages/ArticlesPage/ui/ArticleInfiniteList/ArticleInfiniteList";
 import cls from "./ArticlesPage.module.scss";
+import { ArticlePageGreeting } from "@/features/articlePageGreeting";
 
 
 interface ArticlesPageProps {
@@ -42,6 +43,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
             <Page onScrollEnd={onLoadNextPart} className={classNames(cls.ArticlesPage, {}, [className])}>
                 <ArticlePageFilter />
                 <ArticleInfiniteList className={cls.list} />
+                <ArticlePageGreeting />
             </Page>
         </DynamicModuleLoader>
     );
