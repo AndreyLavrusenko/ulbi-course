@@ -21,6 +21,9 @@ export const saveJsonSettings = createAsyncThunk<
 			return rejectWithValue("Пользователь не найден")
 		}
 
+		console.log({...currentSettings,
+			...newJsonSettings,})
+
  		try {
 			const response = await dispatch(setJsonSettingsMutation({
 				userId: userData.id,

@@ -7,7 +7,8 @@ import { AppRouter } from "@/app/providers/router";
 import { Navbar } from "@/widget/Navbar";
 import { Sidebar } from "@/widget/Sidebar";
 
-import { getUserInitied, userActions } from "@/entities/User";
+import { getUserInitied, initAuthData } from "@/entities/User";
+import { PageLoader } from "@/widget/PageLoader";
 
 export const App = () => {
     const { theme } = useTheme();
@@ -16,8 +17,14 @@ export const App = () => {
     const initiated = useSelector(getUserInitied);
 
     useEffect(() => {
-        dispatch(userActions.initAuthData());
+        dispatch(initAuthData());
     }, [dispatch]);
+
+    if (!initiated) {
+        return (
+            <PageLoader />
+        )
+    }
 
     return (
         <div className={classNames("app", {}, [theme])}>

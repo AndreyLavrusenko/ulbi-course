@@ -13,9 +13,9 @@ import { UserRole } from "@/entities/User/model/const/consts";
 import { type User, type UserSchema } from "./model/types/user";
 import {
     useJsonSettings,
-    useJsonSettingsByKey,
 } from "./model/selectors/jsonSettings";
 import { saveJsonSettings } from "@/entities/User/model/services/saveJsonSettings";
+import { initAuthData } from "@/entities/User/model/services/initAuthData";
 
 export {
     userActions,
@@ -28,7 +28,7 @@ export {
     getUserInitied,
     isUserAdmin,
     isUserManager,
+    initAuthData,
     useJsonSettings,
     saveJsonSettings,
-    useJsonSettingsByKey,
 };

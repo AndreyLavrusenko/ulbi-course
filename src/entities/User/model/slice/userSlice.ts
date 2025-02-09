@@ -3,6 +3,7 @@ import { LOCALSTORAGE_USER_KEY } from "@/shared/const/localstorage";
 import { User, UserSchema } from "../types/user";
 import { saveJsonSettings } from "@/entities/User/model/services/saveJsonSettings";
 import { JsonSettings } from "@/entities/User/model/types/jsonSettings";
+import { initAuthData } from "@/entities/User/model/services/initAuthData";
 
 const initialState: UserSchema = {
     _inited: false,
@@ -14,13 +15,10 @@ export const userSlice = createSlice({
     reducers: {
         setAuth: (state, action: PayloadAction<User>) => {
             state.authData = action.payload;
-        },
-        initAuthData: (state) => {
-            const user = localStorage.getItem(LOCALSTORAGE_USER_KEY);
-            if (user) {
-                state.authData = JSON.parse(user);
-            }
-            state._inited = true;
+            localStorage.setItem(
+                LOCALSTORAGE_USER_KEY,
+                action.payload.id,
+            );
         },
         logout: (state) => {
             state.authData = undefined;
@@ -36,6 +34,13 @@ export const userSlice = createSlice({
                 }
             },
         );
+        builder.addCase(initAuthData.fulfilled, (state, action: PayloadAction<User>) => {
+            state.authData = action.payload
+            state._inited = true
+        })
+        builder.addCase(initAuthData.rejected, (state) => {
+            state._inited = true
+        })
     },
 });
 
