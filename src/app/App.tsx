@@ -9,7 +9,6 @@ import { Sidebar } from "@/widget/Sidebar";
 
 import { getUserInitied, userActions } from "@/entities/User";
 
-
 export const App = () => {
     const { theme } = useTheme();
     const dispatch = useDispatch();
@@ -31,5 +30,4 @@ export const App = () => {
             </Suspense>
         </div>
     );
-
 };
